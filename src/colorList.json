@@ -1,0 +1,33 @@
+{
+  "Party":{
+    "ADMK":"#a1c2bf",
+    "AITC":"#66ff00",
+    "BJD":"#02a41d",
+    "BJP":"#fd9a3e",
+    "BSP":"#3e3eff",
+    "CPM":"#e6452e",
+    "DMK":"#1260e8",
+    "INC":"#00e1e1",
+    "JD(U)":"#f7c839",
+    "JKN":"#012970",
+    "JKPDP":"#0abc3d",
+    "LJP":"#eb8be5",
+    "NCP":"#177da4",
+    "RJD":"#87ce92",
+    "SAD":"#666633",
+    "SHS":"#ff5500",
+    "SP":"#ff7570",
+    "TDP":"#ebfd36",
+    "TRS":"#f84996",
+    "YSRCP":"#0e67b1",
+    "Independent & Others":"#ddd"
+  },
+  "Alliance":{
+    "NDA":"#fd9a3e",
+    "UPA":"#00e1e1",
+    "Third_Front":"#c10000",
+    "Forth_Front":"#ff7570",
+    "Communist_Parties":"#c10000",
+    "Others":"#ddd"
+  }
+}

@@ -2,42 +2,18 @@ import React, { Component } from 'react';
 import * as d3 from 'd3';
 import 'd3-selection-multi';
 import data from './data_combined.json';
+import PartyName from './PartyNameList.json';
+import colors from './colorList.json';
 
-const colors = {
-  "Party":{
-    "ADMK":"#a1c2bf",
-    "AITC":"#66ff00",
-    "BJD":"#02a41d",
-    "BJP":"#fd9a3e",
-    "BSP":"#3e3eff",
-    "CPM":"#e6452e",
-    "DMK":"#1260e8",
-    "INC":"#00e1e1",
-    "JD(U)":'#f7c839',
-    "JKN":"#012970",
-    "JKPDP":"#0abc3d",
-    "LJP":"#eb8be5",
-    "NCP":"#177da4",
-    "RJD":"#87ce92",
-    "SAD":"#666633",
-    "SHS":"#ff5500",
-    "SP":"#ff7570",
-    "TDP":"#ebfd36",
-    "TRS":"#f84996",
-    "YSRCP":"#0e67b1",
-    "Independent & Others":"#ddd"
-  },
-  "Alliance":{
-    'NDA':"#fd9a3e",
-    'UPA':'#00e1e1',
-    'Third_Front':'#c10000',
-    'Forth_Front':'#ff7570',
-    'Communist_Parties':'#c10000',
-    'Others':'#ddd'
-
-  }
+const gender ={
+  'M':'Male',
+  'F':"Female",
 }
-
+const caste ={
+  'GEN':'General Candidate',
+  'SC':"SC Candidate",
+  'ST':"ST Candidate",
+}
 const radius = 10.5;
 const h = 1.5 * radius / Math.cos (Math.PI / 6)
 
@@ -106,7 +82,7 @@ class Cartogram extends Component {
               if (d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F')
                 return 1
               return 0.05;
-            case 'SC/ST Winner':
+            case 'SC/ST Winners':
               if (d[`${this.props.yearSelected}-Result`]['1']['Caste'] !== 'GEN')
                 return 1
               return 0.05;
@@ -125,9 +101,26 @@ class Cartogram extends Component {
   }
   mouseOver = (d,event) => {
     d3.selectAll('.ConstituencyGroup')
-      .attr('opacity', 0.2)
+      .attrs({
+        'opacity':0.05,
+      })
     d3.selectAll(`.${d.State}Group`)
-      .attr('opacity', 1)
+      .attrs({
+        'opacity':d => {
+          switch(this.props.filterSelected){
+            case 'Female Winners':
+              if(d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F')
+                return 1
+              return 0.05
+            case 'SC/ST Winners':
+              if((d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC') || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST') 
+                return 1
+              return 0.05
+            default:
+              return 1
+          }
+        },
+      })
     d3.selectAll('.stateName')
       .text(`${d.stateFullName} - ${d.Name}`)
     d3.selectAll('.mapG')
@@ -151,9 +144,11 @@ class Cartogram extends Component {
     d3.selectAll('.Winner_Name')
       .html(`${d[`${this.props.yearSelected}-Result`]['1']['Name']}`)
     d3.selectAll('.Winner_Party')
-    .html(`${d[`${this.props.yearSelected}-Result`]['1']['Party']}`)
+      .html(`${d[`${this.props.yearSelected}-Result`]['1']['Party']}`)
+    d3.selectAll('.Winner_Party_Full_Name')
+      .html(`(${PartyName[d[`${this.props.yearSelected}-Result`]['1']['Party']]})`)
     d3.selectAll('.Category_Name')
-      .html(`${d[`${this.props.yearSelected}-Result`]['1']['Sex']} · ${d[`${this.props.yearSelected}-Result`]['1']['Caste']}`)
+      .html(`${gender[d[`${this.props.yearSelected}-Result`]['1']['Sex']]} · ${caste[d[`${this.props.yearSelected}-Result`]['1']['Caste']]}`)
     d3.selectAll('.Margin_Percent_Value')
       .html(`${((d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100/d[`${this.props.yearSelected}-Result`]['1']['Votes']).toFixed(1)}%`)
   }
@@ -174,11 +169,11 @@ class Cartogram extends Component {
             case 'Female Winners':
               if (d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F')
                 return 1
-              return 0.2;
-            case 'SC/ST Winner':
+              return 0.05;
+            case 'SC/ST Winners':
               if (d[`${this.props.yearSelected}-Result`]['1']['Caste'] !== 'GEN')
                 return 1
-              return 0.2;
+              return 0.05;
             default:
               return 1;
           }
@@ -481,7 +476,10 @@ class Cartogram extends Component {
       .data(Result_All_years[this.props.yearSelected])
       .enter()
       .append('div')
-      .attrs({ 'class':'partyBars' })
+      .attrs({ 
+        'class':'partyBars',
+        'title':d => PartyName[d.key]
+      })
       .on('mouseover',d => {
         d3.selectAll('.ConstituencyGroup')
           .attrs({ 'opacity': 0.05 })
@@ -560,7 +558,10 @@ class Cartogram extends Component {
       .data(d => d['Party'])
       .enter()
       .append('div')
-      .attrs({ 'class':'party_bars' })
+      .attrs({ 
+        'class':'party_bars',
+        'title':d => PartyName[d.key]
+      })
       .on('mouseover',d => {
         d3.selectAll('.ConstituencyGroup')
           .attrs({ 'opacity': 0.05 })
@@ -610,7 +611,10 @@ class Cartogram extends Component {
           </div>
           <div className='Winner_Info'>
             <div className='Winner_Name bold'>Winner_name</div>
-            <div className='Winner_Party bold'>BJP</div>
+            <div className='winner_party_text'>
+              <div className='Winner_Party bold'>BJP</div>
+              <div className='Winner_Party_Full_Name'>(BJP)</div>
+            </div>
           </div>
           <div className='Category_Name'>M · GEN</div>
           <div className='Margin_Percent'>Win Margin: <span className='bold Margin_Percent_Value'>75%</span></div>
