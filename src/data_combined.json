@@ -41,7 +41,7 @@
       "4": {
         "Name": "MIDIYAM BABURAO",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "63",
@@ -138,7 +138,7 @@
       "2": {
         "Name": "MIDIYAM BABU RAO",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "ST",
         "Sex": "M",
         "Age": "58",
@@ -301,7 +301,7 @@
       "7": {
         "Name": "VASUDEVA RAO BODDU",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "41",
@@ -1126,7 +1126,7 @@
       "16": {
         "Name": "ARJUNARAO YEGUPATI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "57",
@@ -6246,7 +6246,7 @@
       "4": {
         "Name": "KOTHAPALLI SUBRAMANYAM",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "45",
@@ -7024,7 +7024,7 @@
       "5": {
         "Name": "UDDHAB BARMAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "69",
@@ -7166,7 +7166,7 @@
       "4": {
         "Name": "DURGESWAR DEKA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "54",
@@ -7580,7 +7580,7 @@
       "5": {
         "Name": "KHEMRAJ CHETRY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "55",
@@ -7598,7 +7598,7 @@
       "7": {
         "Name": "LAKSHIKANTA KURMI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "36",
@@ -7668,7 +7668,7 @@
       "4": {
         "Name": "JITEN SUNDI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "64",
@@ -7885,7 +7885,7 @@
       "11": {
         "Name": "TANISH ORANG",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "45",
@@ -8118,7 +8118,7 @@
       "5": {
         "Name": "SUBHAS SEN",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "64",
@@ -9077,7 +9077,7 @@
       "4": {
         "Name": "PRATIMA ENGHEEPI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "F",
         "Age": "39",
@@ -9265,7 +9265,7 @@
       "10": {
         "Name": "ARUP KUMAR MAHANTA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "43",
@@ -9632,7 +9632,7 @@
       "4": {
         "Name": "REJAMOND ALI BARBHUIYA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "52",
@@ -9801,7 +9801,7 @@
       "4": {
         "Name": "DIPAK BHATTACHARJEE",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "69",
@@ -10305,7 +10305,7 @@
       "8": {
         "Name": "VIRENDRA PRASAD GUPTA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "45",
@@ -10583,7 +10583,7 @@
       "5": {
         "Name": "PRABHU RAJ NARAIN RAO",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "59",
@@ -10646,7 +10646,7 @@
       "12": {
         "Name": "SUNIL KUMAR RAO",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "41",
@@ -10698,7 +10698,7 @@
       "4": {
         "Name": "RAMASHRAY SINGH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "65",
@@ -11812,7 +11812,7 @@
       "11": {
         "Name": "DHRUB NARAYAN KARN",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "54",
@@ -12359,7 +12359,7 @@
       "9": {
         "Name": "JITENDRA MANJHI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "30",
@@ -13005,7 +13005,7 @@
       "9": {
         "Name": "SHATRUDHAN SAHNI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "42",
@@ -13499,7 +13499,7 @@
       "7": {
         "Name": "HADAY NA. YADAV",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "72",
@@ -13517,7 +13517,7 @@
       "9": {
         "Name": "COLONEL LAKSHMESHWAR MISHRA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "55",
@@ -13795,7 +13795,7 @@
       "7": {
         "Name": "JAY NARAYAN YADAV",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "49",
@@ -13937,7 +13937,7 @@
       "9": {
         "Name": "BALRAM SINGH YADAV",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "54",
@@ -14109,7 +14109,7 @@
       "10": {
         "Name": "SANJAY KUMAR RISHIDEV",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "32",
@@ -14683,7 +14683,7 @@
       "3": {
         "Name": "AMAR NATH YADAV",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "49",
@@ -15221,7 +15221,7 @@
       "4": {
         "Name": "RAM DEO VERMA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "67",
@@ -15293,7 +15293,7 @@
       "12": {
         "Name": "PHOOL BABU SINGH",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "37",
@@ -15399,7 +15399,7 @@
       "3": {
         "Name": "RAMDEO VERMA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "62",
@@ -15688,7 +15688,7 @@
       "11": {
         "Name": "LAL BAHADUR SADA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "43",
@@ -16235,7 +16235,7 @@
       "12": {
         "Name": "PANKAJ KUMAR SINGH",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "48",
@@ -16558,7 +16558,7 @@
       "7": {
         "Name": "MAHBUB ALAM",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "57",
@@ -18056,7 +18056,7 @@
       "4": {
         "Name": "JAGDISH CHANDRA VASU",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "43",
@@ -18442,7 +18442,7 @@
       "12": {
         "Name": "RINKI KUMARI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "30",
@@ -18566,7 +18566,7 @@
       "6": {
         "Name": "SUBODH ROY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "65",
@@ -18747,7 +18747,7 @@
       "3": {
         "Name": "RAJU YADAV",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "31",
@@ -19043,7 +19043,7 @@
       "4": {
         "Name": "RAMESHWAR PRASAD",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "67",
@@ -19761,7 +19761,7 @@
       "5": {
         "Name": "SHASHI YADAV",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "40",
@@ -20282,7 +20282,7 @@
       "12": {
         "Name": "JAY PRAKASH DAS",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "61",
@@ -20856,7 +20856,7 @@
       "5": {
         "Name": "INDU SINGH",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "36",
@@ -21224,7 +21224,7 @@
       "4": {
         "Name": "RAMADHAR SINGH",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "58",
@@ -21960,7 +21960,7 @@
       "9": {
         "Name": "NIRANJAN KUMAR",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "40",
@@ -22425,7 +22425,7 @@
       "9": {
         "Name": "GANESH SHANKAR VIDYARTHI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "85",
@@ -22615,7 +22615,7 @@
       "7": {
         "Name": "TETRI DEVI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "F",
         "Age": "39",
@@ -22875,7 +22875,7 @@
       "5": {
         "Name": "RAJA RAM SINGH",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "58",
@@ -23198,7 +23198,7 @@
       "6": {
         "Name": "COMRADE SURENDRA LAL SINGH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "34",
@@ -23340,7 +23340,7 @@
       "6": {
         "Name": "BAL SINGH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "ST",
         "Sex": "M",
         "Age": "38",
@@ -25119,7 +25119,7 @@
       "25": {
         "Name": "BISAHAT KURRE",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "52",
@@ -25694,7 +25694,7 @@
       "17": {
         "Name": "JAI PRAKASH NAIR",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "42",
@@ -29961,7 +29961,7 @@
       "8": {
         "Name": "SUDHIR JOSHI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "67",
@@ -31164,7 +31164,7 @@
       "4": {
         "Name": "KATARA SINGAJIBHAI JALJIBHAI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "67",
@@ -31270,7 +31270,7 @@
       "4": {
         "Name": "KATARA SINGJIBHAI JALJIBHAI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "ST",
         "Sex": "M",
         "Age": "62",
@@ -34455,7 +34455,7 @@
       "7": {
         "Name": "VADIYA LAXMANBHAI CHHAGANBHAI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "55",
@@ -35666,7 +35666,7 @@
       "6": {
         "Name": "PHUL SINGH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "56",
@@ -36412,7 +36412,7 @@
       "6": {
         "Name": "COMRADE RAM KUMAR",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "46",
@@ -36581,7 +36581,7 @@
       "5": {
         "Name": "COMRADE RAM KUMAR",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "41",
@@ -37489,7 +37489,7 @@
       "7": {
         "Name": "MASTER SHER SINGH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "43",
@@ -39150,7 +39150,7 @@
       "3": {
         "Name": "KUSHAL BHARDWAJ",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "45",
@@ -39247,7 +39247,7 @@
       "3": {
         "Name": "DR. ONKAR SHAD",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "49",
@@ -39526,7 +39526,7 @@
       "4": {
         "Name": "JAGAT RAM",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "57",
@@ -41319,7 +41319,7 @@
       "4": {
         "Name": "JYOTIN SOREN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "65",
@@ -41452,7 +41452,7 @@
       "6": {
         "Name": "JYOTIN SOREN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "ST",
         "Sex": "M",
         "Age": "59",
@@ -41669,7 +41669,7 @@
       "16": {
         "Name": "GITA MANDAL",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "44",
@@ -42010,7 +42010,7 @@
       "11": {
         "Name": "BITIYA MANJHI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "F",
         "Age": "40",
@@ -42333,7 +42333,7 @@
       "10": {
         "Name": "RAMNARESH SINGH",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "49",
@@ -42620,7 +42620,7 @@
       "7": {
         "Name": "JAVED ISLAM",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "54",
@@ -42907,7 +42907,7 @@
       "2": {
         "Name": "RAJKUMAR YADAV",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "41",
@@ -43329,7 +43329,7 @@
       "9": {
         "Name": "SHUSHMA MEHTA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "F",
         "Age": "41",
@@ -43643,7 +43643,7 @@
       "6": {
         "Name": "LAL SAY KUMAR BHAGAT",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "44",
@@ -43903,7 +43903,7 @@
       "7": {
         "Name": "RAJENDRA SINGH MUNDA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "78",
@@ -43975,7 +43975,7 @@
       "15": {
         "Name": "BAHADUR  URAON",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "70",
@@ -44144,7 +44144,7 @@
       "4": {
         "Name": "RAJENDRA SINGH MUNDA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "ST",
         "Sex": "M",
         "Age": "74",
@@ -48560,7 +48560,7 @@
       "15": {
         "Name": "BHARADWHAJA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "67",
@@ -49412,7 +49412,7 @@
       "13": {
         "Name": "PARASURAM KURUBAR",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "31",
@@ -49843,7 +49843,7 @@
       "11": {
         "Name": "DODDAMANI PRASAD",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "27",
@@ -51690,7 +51690,7 @@
       "4": {
         "Name": "K YADAVA SHETTY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "50",
@@ -51823,7 +51823,7 @@
       "3": {
         "Name": "B.MADHAVA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "71",
@@ -52965,7 +52965,7 @@
       "4": {
         "Name": "G V SREERAMA REDDY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "64",
@@ -54428,7 +54428,7 @@
       "13": {
         "Name": "CHAUDAHALLY JAVARAIAH",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "42",
@@ -54912,7 +54912,7 @@
       "1": {
         "Name": "P KARUNAKARAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "69",
@@ -55054,7 +55054,7 @@
       "1": {
         "Name": "P KARUNAKARAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "64",
@@ -55136,7 +55136,7 @@
       "1": {
         "Name": "P K SREEMATHI TEACHER",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "64",
@@ -55260,7 +55260,7 @@
       "2": {
         "Name": "K.K RAGESH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "38",
@@ -55360,7 +55360,7 @@
       "2": {
         "Name": "ADV.A.N.SHAMSEER",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "36",
@@ -55475,7 +55475,7 @@
       "2": {
         "Name": "ADV. P. SATHEEDEVI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "52",
@@ -55566,7 +55566,7 @@
       "2": {
         "Name": "A.VIJAYARAGHAVAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "58",
@@ -55699,7 +55699,7 @@
       "2": {
         "Name": "ADV. P.A. MOHAMED RIYAS",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "33",
@@ -55862,7 +55862,7 @@
       "2": {
         "Name": "P.K.SAINABA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "51",
@@ -55968,7 +55968,7 @@
       "2": {
         "Name": "T.K. HAMZA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "71",
@@ -56552,7 +56552,7 @@
       "1": {
         "Name": "M B RAJESH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "43",
@@ -56703,7 +56703,7 @@
       "1": {
         "Name": "M.B. RAJESH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "34",
@@ -56812,7 +56812,7 @@
       "1": {
         "Name": "P.K.BIJU",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "39",
@@ -56936,7 +56936,7 @@
       "1": {
         "Name": "P.K BIJU",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "34",
@@ -57456,7 +57456,7 @@
       "2": {
         "Name": "ADV. U.P JOSEPH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "45",
@@ -57734,7 +57734,7 @@
       "2": {
         "Name": "SINDHU JOY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "32",
@@ -58112,7 +58112,7 @@
       "2": {
         "Name": "C B CHANDRABABU",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "53",
@@ -58245,7 +58245,7 @@
       "2": {
         "Name": "DR. K.S MANOJ",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "43",
@@ -58433,7 +58433,7 @@
       "2": {
         "Name": "ADV. SURESH KURUP",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "52",
@@ -58971,7 +58971,7 @@
       "2": {
         "Name": "ADV.K.ANANTHA GOPAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "61",
@@ -59089,7 +59089,7 @@
       "1": {
         "Name": "DR.A .SAMPATH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "51",
@@ -59249,7 +59249,7 @@
       "1": {
         "Name": "ADV. A SAMPATH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "46",
@@ -59403,7 +59403,7 @@
       "2": {
         "Name": "M.A. BABY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "59",
@@ -59518,7 +59518,7 @@
       "2": {
         "Name": "P.RAJENDRAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "58",
@@ -60191,7 +60191,7 @@
       "5": {
         "Name": "JUGAL KISHOR PIPPAL",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "65",
@@ -60695,7 +60695,7 @@
       "5": {
         "Name": "AKHILESH YADAV",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "38",
@@ -62085,7 +62085,7 @@
       "9": {
         "Name": "COMRADE LATA BHABOR",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "F",
         "Age": "42",
@@ -70166,7 +70166,7 @@
       "5": {
         "Name": "ADV. TANAJI SUKDEO JAIBHAVE",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "51",
@@ -70426,7 +70426,7 @@
       "3": {
         "Name": "COM. HEMANT MOTIRAM WAGHERE",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "41",
@@ -70532,7 +70532,7 @@
       "3": {
         "Name": "GAVIT JEEVA PANDU",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "ST",
         "Sex": "M",
         "Age": "60",
@@ -74628,7 +74628,7 @@
       "3": {
         "Name": "KHARAPADE LADAKYA RUPA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "51",
@@ -74743,7 +74743,7 @@
       "4": {
         "Name": "KOM LAHANU SHIDVA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "ST",
         "Sex": "M",
         "Age": "71",
@@ -79160,7 +79160,7 @@
       "4": {
         "Name": "D.B.NAIK",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "47",
@@ -86567,7 +86567,7 @@
       "4": {
         "Name": "SALOMI MINZ",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "ST",
         "Sex": "F",
         "Age": "48",
@@ -88941,7 +88941,7 @@
       "15": {
         "Name": "BALARAM HOTA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "30",
@@ -89496,7 +89496,7 @@
       "7": {
         "Name": "ASHOK PRADHAN",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "50",
@@ -89666,7 +89666,7 @@
       "8": {
         "Name": "MEGHANADA SABAR",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "47",
@@ -89800,7 +89800,7 @@
       "4": {
         "Name": "ALI KISHOR PATNAIK",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "59",
@@ -90562,7 +90562,7 @@
       "9": {
         "Name": "GURMEET SINGH BAKHATPURA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "62",
@@ -92410,7 +92410,7 @@
       "5": {
         "Name": "BALBIR SINGH JADLA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "62",
@@ -92579,7 +92579,7 @@
       "4": {
         "Name": "MAHAN SINGH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "61",
@@ -93173,7 +93173,7 @@
       "8": {
         "Name": "SUKHWINDER SINGH SEKHON",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "51",
@@ -93999,7 +93999,7 @@
       "6": {
         "Name": "BHAGWANT SINGH SAMAON",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "36",
@@ -94529,7 +94529,7 @@
       "10": {
         "Name": "JOGINDER SINGH AULAKH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "63",
@@ -94547,7 +94547,7 @@
       "12": {
         "Name": "GURPREET SINGH",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "33",
@@ -94852,7 +94852,7 @@
       "5": {
         "Name": "PALARAM",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "57",
@@ -95012,7 +95012,7 @@
       "4": {
         "Name": "SHYOPAT RAM",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "32",
@@ -95254,7 +95254,7 @@
       "4": {
         "Name": "PAWAN KUMAR DUGGAL",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "33",
@@ -95381,7 +95381,7 @@
       "6": {
         "Name": "INDRA SINGH JAT",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "60",
@@ -96206,7 +96206,7 @@
       "11": {
         "Name": "OM PRAKASH JHARODA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "55",
@@ -97138,7 +97138,7 @@
       "4": {
         "Name": "AMARA RAM",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "58",
@@ -97280,7 +97280,7 @@
       "3": {
         "Name": "AMARARAM",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "54",
@@ -98798,7 +98798,7 @@
       "12": {
         "Name": "SHANTI LAL TRIVEDI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "77",
@@ -101202,7 +101202,7 @@
       "8": {
         "Name": "GOTAM LAL MEENA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "38",
@@ -103112,7 +103112,7 @@
       "8": {
         "Name": "BHARATHI, K. THIRU",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "33",
@@ -104945,7 +104945,7 @@
       "5": {
         "Name": "VASUKI .U",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "58",
@@ -107073,7 +107073,7 @@
       "5": {
         "Name": "ANANDAN G",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "53",
@@ -107100,7 +107100,7 @@
       "8": {
         "Name": "VENKATESAN M",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "43",
@@ -111391,7 +111391,7 @@
       "6": {
         "Name": "SRIDHAR.S",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "55",
@@ -111463,7 +111463,7 @@
       "14": {
         "Name": "ASAITHAMBI.PALA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "42",
@@ -111894,7 +111894,7 @@
       "5": {
         "Name": "NATARAJAN, P.R.",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "63",
@@ -111975,7 +111975,7 @@
       "14": {
         "Name": "CHANDRAN, D.",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "44",
@@ -112099,7 +112099,7 @@
       "1": {
         "Name": "NATARAJAN.P.R.",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "59",
@@ -113367,7 +113367,7 @@
       "5": {
         "Name": "TAMILSELVI.S",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "41",
@@ -114201,7 +114201,7 @@
       "5": {
         "Name": "PANDI.N",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "55",
@@ -114569,7 +114569,7 @@
       "5": {
         "Name": "B.VIKRAMAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "52",
@@ -114837,7 +114837,7 @@
       "2": {
         "Name": "MOHAN P",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "59",
@@ -115889,7 +115889,7 @@
       "5": {
         "Name": "SAMUELRAJ K",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "46",
@@ -117325,7 +117325,7 @@
       "5": {
         "Name": "BELLARMIN A.V.",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "59",
@@ -117388,7 +117388,7 @@
       "12": {
         "Name": "ANTHONY MUTHU",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "48",
@@ -117548,7 +117548,7 @@
       "3": {
         "Name": "BELLARMIN  AV",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "55",
@@ -122171,7 +122171,7 @@
       "4": {
         "Name": "CHERUPALLY SEETHARAMULU",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "60",
@@ -122286,7 +122286,7 @@
       "2": {
         "Name": "NOMULA NARSIMHAIAH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "49",
@@ -122969,7 +122969,7 @@
       "5": {
         "Name": "NANDYALA NARSIMHA REDDY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "58",
@@ -123570,7 +123570,7 @@
       "1": {
         "Name": "JITENDRA CHAUDHURY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "57",
@@ -123642,7 +123642,7 @@
       "9": {
         "Name": "FALGUNI TRIPURA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "47",
@@ -123694,7 +123694,7 @@
       "1": {
         "Name": "BAJU BAN RIYAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "ST",
         "Sex": "M",
         "Age": "67",
@@ -123794,7 +123794,7 @@
       "1": {
         "Name": "SANKAR PRASAD DATTA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "56",
@@ -123884,7 +123884,7 @@
       "11": {
         "Name": "PARTHA KARMAKAR",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "46",
@@ -123927,7 +123927,7 @@
       "1": {
         "Name": "KHAGEN DAS",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "71",
@@ -126450,7 +126450,7 @@
       "10": {
         "Name": "NAFISUDDIN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "80",
@@ -128486,7 +128486,7 @@
       "8": {
         "Name": "RAM AUTAR",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "59",
@@ -130792,7 +130792,7 @@
       "8": {
         "Name": "KRISHNA ADHIKARI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "49",
@@ -131599,7 +131599,7 @@
       "15": {
         "Name": "RAJESH",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "49",
@@ -136532,7 +136532,7 @@
       "9": {
         "Name": "RAJJO DEVI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "56",
@@ -142179,7 +142179,7 @@
       "14": {
         "Name": "BALMUKUND DHURIYA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "35",
@@ -142735,7 +142735,7 @@
       "7": {
         "Name": "RAM SINGH",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "46",
@@ -144528,7 +144528,7 @@
       "7": {
         "Name": "ARUN KUMAR SINGH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "63",
@@ -144727,7 +144727,7 @@
       "11": {
         "Name": "SHRIRAM CHAUDHARY",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "55",
@@ -148568,7 +148568,7 @@
       "17": {
         "Name": "RAM DULAR",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "50",
@@ -148873,7 +148873,7 @@
       "8": {
         "Name": "ISHWARI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "53",
@@ -149600,7 +149600,7 @@
       "17": {
         "Name": "JEERA BHARTI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "F",
         "Age": "46",
@@ -150031,7 +150031,7 @@
       "11": {
         "Name": "HIRALAL YADAV",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "57",
@@ -150570,7 +150570,7 @@
       "10": {
         "Name": "SHANKAR KOL",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "52",
@@ -150794,7 +150794,7 @@
       "7": {
         "Name": "SHIV PRASAD DEOLI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "61",
@@ -150936,7 +150936,7 @@
       "5": {
         "Name": "BACHI RAM",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "73",
@@ -151117,7 +151117,7 @@
       "5": {
         "Name": "INDRESH MAIKHURI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "35",
@@ -151826,7 +151826,7 @@
       "8": {
         "Name": "VIJAY KUMAR",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "62",
@@ -152077,7 +152077,7 @@
       "13": {
         "Name": "KAILASH PANDEY",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "42",
@@ -152283,7 +152283,7 @@
       "3": {
         "Name": "SAMAN PATHAK (SURAJ)",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "41",
@@ -152407,7 +152407,7 @@
       "2": {
         "Name": "JIBESH SARKAR",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "55",
@@ -152516,7 +152516,7 @@
       "2": {
         "Name": "MAHENDRA KUMAR ROY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "58",
@@ -152631,7 +152631,7 @@
       "1": {
         "Name": "MAHENDRA KUMAR ROY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "54",
@@ -153179,7 +153179,7 @@
       "1": {
         "Name": "MD. SALIM",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "56",
@@ -153312,7 +153312,7 @@
       "2": {
         "Name": "BIRESWAR LAHIRI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "61",
@@ -153654,7 +153654,7 @@
       "2": {
         "Name": "KHAGEN MURMU",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "59",
@@ -153796,7 +153796,7 @@
       "2": {
         "Name": "SAILEN SARKAR",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "68",
@@ -153905,7 +153905,7 @@
       "3": {
         "Name": "ABUL HASNAT KHAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "67",
@@ -154065,7 +154065,7 @@
       "2": {
         "Name": "ABDUR RAZZAQUE",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "60",
@@ -154165,7 +154165,7 @@
       "2": {
         "Name": "DR. ELAHI KAMRE MAHAMMAD",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "53",
@@ -154280,7 +154280,7 @@
       "2": {
         "Name": "BRAJA MUKHERJEE",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "71",
@@ -154362,7 +154362,7 @@
       "2": {
         "Name": "MUZAFFAR HOSSAIN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "61",
@@ -154477,7 +154477,7 @@
       "2": {
         "Name": "MRIGANKA SEKHAR BHATTACHARYA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "61",
@@ -154532,7 +154532,7 @@
       "1": {
         "Name": "BADARUDDOZA KHAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "60",
@@ -154665,7 +154665,7 @@
       "2": {
         "Name": "ANISUR RAHAMAN SARKAR",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "57",
@@ -154792,7 +154792,7 @@
       "3": {
         "Name": "BANSA GOPAL CHOUDHURY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "54",
@@ -154916,7 +154916,7 @@
       "1": {
         "Name": "BANSA GOPAL CHOWDHURY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "49",
@@ -155007,7 +155007,7 @@
       "2": {
         "Name": "DOME RAMCHANDRA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "56",
@@ -155077,7 +155077,7 @@
       "1": {
         "Name": "DOCTOR RAM CHANDRA DOME",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "51",
@@ -155616,7 +155616,7 @@
       "2": {
         "Name": "ACHARIA BASUDEB",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "71",
@@ -155679,7 +155679,7 @@
       "9": {
         "Name": "SUDHIR KUMAR MURMU",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "45",
@@ -155749,7 +155749,7 @@
       "1": {
         "Name": "ACHARIA BASUDEB",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "67",
@@ -155876,7 +155876,7 @@
       "2": {
         "Name": "SUSMITA BAURI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "F",
         "Age": "39",
@@ -155964,7 +155964,7 @@
       "1": {
         "Name": "SUSMITA BAURI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "F",
         "Age": "34",
@@ -156055,7 +156055,7 @@
       "2": {
         "Name": "SK. SAIDUL HAQUE",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "59",
@@ -156134,7 +156134,7 @@
       "1": {
         "Name": "SK. SAIDUL HAQUE",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "55",
@@ -156234,7 +156234,7 @@
       "2": {
         "Name": "JHA SHANTANU",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "52",
@@ -156261,7 +156261,7 @@
       "5": {
         "Name": "SUBIMAL SENGUPTA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "55",
@@ -156331,7 +156331,7 @@
       "2": {
         "Name": "JYOTIRMOYEE SIKDAR",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "39",
@@ -156431,7 +156431,7 @@
       "2": {
         "Name": "DR. PULIN BIHARI BASKE",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "46",
@@ -156555,7 +156555,7 @@
       "1": {
         "Name": "PULIN BIHARI BASKE",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "ST",
         "Sex": "M",
         "Age": "40",
@@ -156655,7 +156655,7 @@
       "2": {
         "Name": "SAKTIMOHAN MALIK",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "54",
@@ -156707,7 +156707,7 @@
       "1": {
         "Name": "MALIK SAKTI MOHAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "49",
@@ -156780,7 +156780,7 @@
       "2": {
         "Name": "ISWAR CHANDRA DAS",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "53",
@@ -156834,7 +156834,7 @@
       "8": {
         "Name": "PEJUSH KUMAR SAHANA",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "46",
@@ -156868,7 +156868,7 @@
       "1": {
         "Name": "ANUP KUMAR SAHA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "53",
@@ -156959,7 +156959,7 @@
       "2": {
         "Name": "PRADIP SAHA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "53",
@@ -156995,7 +156995,7 @@
       "6": {
         "Name": "SAJAL ADHIKARI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "49",
@@ -157056,7 +157056,7 @@
       "2": {
         "Name": "RUPCHAND PAL",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "72",
@@ -157156,7 +157156,7 @@
       "2": {
         "Name": "ARCHANA BISWAS",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "F",
         "Age": "43",
@@ -157253,7 +157253,7 @@
       "2": {
         "Name": "BASUDEB BARMAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "73",
@@ -157729,7 +157729,7 @@
       "2": {
         "Name": "TIRTHANKAR RAY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "38",
@@ -157835,7 +157835,7 @@
       "2": {
         "Name": "SANTASRI CHATTERJEE",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "69",
@@ -157935,7 +157935,7 @@
       "3": {
         "Name": "BAGCHI RUPA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "48",
@@ -158104,7 +158104,7 @@
       "2": {
         "Name": "MD. SALIM",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "51",
@@ -158240,7 +158240,7 @@
       "2": {
         "Name": "SUBHASHINI ALI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "66",
@@ -158294,7 +158294,7 @@
       "8": {
         "Name": "OMPRAKASH RAJBHAR",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "49",
@@ -158364,7 +158364,7 @@
       "2": {
         "Name": "TARIT BARAN TOPDAR",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "67",
@@ -158473,7 +158473,7 @@
       "2": {
         "Name": "DEBESH DAS",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "M",
         "Age": "54",
@@ -158588,7 +158588,7 @@
       "2": {
         "Name": "ASIM BALA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "67",
@@ -158670,7 +158670,7 @@
       "2": {
         "Name": "SINHA TAPAS",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "47",
@@ -158749,7 +158749,7 @@
       "2": {
         "Name": "PRASANTA PRADHAN",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "69",
@@ -158804,7 +158804,7 @@
       "2": {
         "Name": "SRIDIP BHATTACHARYA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "58",
@@ -158955,7 +158955,7 @@
       "2": {
         "Name": "SWADESH CHAKRABORTTY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "66",
@@ -159118,7 +159118,7 @@
       "3": {
         "Name": "NANDINI MUKHERJEE",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "F",
         "Age": "48",
@@ -159260,7 +159260,7 @@
       "2": {
         "Name": "RABIN DEB",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "60",
@@ -159396,7 +159396,7 @@
       "2": {
         "Name": "ASIM KUMAR DASGUPTA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "68",
@@ -159493,7 +159493,7 @@
       "2": {
         "Name": "AMITAVA NANDY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "66",
@@ -159969,7 +159969,7 @@
       "2": {
         "Name": "SEKH IBRAHIM ALI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "26",
@@ -160075,7 +160075,7 @@
       "2": {
         "Name": "LAKSHMAN CHANDRA SETH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "59",
@@ -160175,7 +160175,7 @@
       "2": {
         "Name": "SABIR UDDIN MOLLA",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "39",
@@ -160308,7 +160308,7 @@
       "2": {
         "Name": "HANNAN MOLLAH",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "63",
@@ -160408,7 +160408,7 @@
       "2": {
         "Name": "DR. ABUL HASNAT",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "63",
@@ -160568,7 +160568,7 @@
       "2": {
         "Name": "SAMIK LAHIRI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "42",
@@ -160677,7 +160677,7 @@
       "2": {
         "Name": "SUJAN CHAKRABORTY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "55",
@@ -160810,7 +160810,7 @@
       "2": {
         "Name": "SUJAN CHAKRABORTY",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "50",
@@ -160919,7 +160919,7 @@
       "2": {
         "Name": "RINKU NASKAR",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "SC",
         "Sex": "F",
         "Age": "30",
@@ -161025,7 +161025,7 @@
       "2": {
         "Name": "ANIMESH NASKAR",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "SC",
         "Sex": "M",
         "Age": "34",
@@ -161331,7 +161331,7 @@
       "5": {
         "Name": "K.G.DAS",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "70",
@@ -161385,7 +161385,7 @@
       "11": {
         "Name": "N K P NAIR",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "59",
@@ -161464,7 +161464,7 @@
       "3": {
         "Name": "SHRI TAPAN KUMAR BEPARI",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "51",
@@ -161627,7 +161627,7 @@
       "8": {
         "Name": "KAWALJIT SINGH",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "33",
@@ -165253,7 +165253,7 @@
       "4": {
         "Name": "DR.ABDUL MUNEER",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "ST",
         "Sex": "M",
         "Age": "41",
@@ -165314,7 +165314,7 @@
       "3": {
         "Name": "M.K. LUKMANUL HAKEEM",
         "Party": "CPM",
-        "Alliance": "Others",
+        "Alliance": "Third_Front",
         "Caste": "ST",
         "Sex": "M",
         "Age": "32",
@@ -165594,7 +165594,7 @@
       "28": {
         "Name": "G. PALANI",
         "Party": "CPI(ML)(L)",
-        "Alliance": "Others",
+        "Alliance": "Communist_Parties",
         "Caste": "GEN",
         "Sex": "M",
         "Age": "59",
