@@ -1,0 +1,276 @@
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:16px;
+  color:#262626;
+}
+
+.stickyinfo{
+  position:fixed;
+  text-align: center;
+  font-style: italic;
+  color: #1992f6;
+  background-color: #aacce2;
+  border-bottom: 1px solid #1992f6;
+  padding:10px 0;
+  width:100%;
+  font-weight: 700;
+}
+.headImg{
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  margin:50px 0;
+}
+
+.head{
+  padding:40px 20px;
+  background-color: rgb(250,250,250);
+  border-bottom:1px solid #ddd;
+  margin-bottom:80px;
+}
+
+.heading{
+  font-size: 32px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.subHead{
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  max-width: 720px;
+  color:#262626;
+  margin: auto;
+  text-align: center;
+  line-height: 36px;
+  margin-bottom:50px;
+}
+
+.title{
+  display: flex;
+  max-width: 1272px;
+  font-size:32px;
+  font-weight: 700;
+  justify-content: space-between;
+  align-items: center;
+  color: #1992f6;
+  border-bottom:5px solid #1992f6;
+  margin:auto;
+  padding-top:20px;
+}
+
+
+.filters{
+  display: flex;
+  max-width: 1272px;
+  justify-content: space-between;
+  align-items: center;
+  color: #1992f6;
+  margin:auto;
+}
+.allianceSelection{
+  margin-right:30px;
+}
+
+.vizArea{
+  margin:auto;
+  max-width: 1272px;
+  display:flex;
+  align-items: flex-start;
+  margin-bottom:70px;
+}
+
+
+.infoTitle{
+  font-size: 28px;
+  font-weight:700;
+}
+
+.infoSection{
+  width:33.33vw;
+  max-width: 424px;
+  max-height: 750px;
+  margin-top:35px;
+  overflow: overlay;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+  padding: 15px 30px 15px 15px;
+}
+
+
+.infoSection::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.infoSection::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.infoSection::-webkit-scrollbar-thumb
+{
+	background-color: #aaa;
+	border-radius: 10px;
+}
+
+.partyBars{
+  margin:15px 0;
+  display: flex;
+  cursor: pointer;
+}
+.party_bars{
+  margin:15px 0;
+  display: flex;
+  cursor: pointer;
+}
+.partyNames{
+  font-weight: 700;
+  width:50px;
+}
+
+.partyBarBG{
+  background-color: #fff;
+  border:1px solid #999;
+  flex-grow: 1;
+  display: flex;
+}
+
+
+
+.AllianceBars{
+  margin:15px 0;
+}
+.AllianceNames{
+  font-weight: 700;
+  font-size:18px;
+  width:100%;
+  margin-bottom:10px;
+  padding-top:20px;
+  border-top:1px solid rgba(0,0,0,0.1)
+}
+
+.AllianceBarsBG{
+  background-color: #fff;
+  border:1px solid #999;
+  flex-grow: 1;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.seatShare{
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.tooltip {
+  position: absolute;	
+  background-color: rgba(250,250,250,0.95);
+  min-width:350px;
+  padding:20px;
+  display:none;
+}
+
+.tooltip_Head{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom:10px;
+  border-bottom:1px solid #ddd;
+  align-items: baseline;
+}
+
+.bold{
+  font-weight:700;
+  color:#262626
+}
+
+.const_Name{
+  font-size:24px;
+  font-weight:700;
+  margin-right: 20px;
+}
+
+.Winner_Name{
+  font-size:18px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+  text-transform: capitalize;
+}
+
+.Winner_Party{
+  font-size:20px;
+  margin-bottom: 5px;
+}
+
+.Winner_Info{
+  display: flex;
+  justify-content: space-between;
+}
+.Category_Name{
+  font-size:14px;
+  color:#aaa;
+  margin-bottom:15px;
+  font-weight: 700;
+}
+
+.Voter_Turnout_tooltip{
+  font-size:18px;
+  color:#666;
+}
+
+.Margin_Percent{
+  font-size:18px;
+  color:#666;
+}
+
+.hexHighlight{
+  pointer-events:none;
+}
+
+.seat_total{
+  font-size: 20px;
+}
+.AllianceBar{
+  display: flex;
+}
+.alliancepartyNames{
+  opacity: 0.4;
+}
+
+.share {
+  padding:20px 0;
+  background-color: rgb(245, 245, 245);
+  margin:auto;
+  font-size:18px;
+  color:"#262626";
+  text-align: center;
+  border-bottom:1px solid #ddd;
+  border-top:1px solid #ddd;
+}
+.footerInfo{
+  background-color: rgb(250,250,250);
+  padding: 20px 0;
+  font-size:14px;
+  line-height: 48px;
+  font-weight: 700;
+}
+.footerText{
+  max-width: 1272px;
+  margin:auto;
+}
+.icons{
+  display: flex;
+  justify-content: center;
+  margin-top:20px;
+}
+.SocialMediaShareButton--facebook {
+  margin-right:20px;
+}
