@@ -257,11 +257,16 @@ body{
 }
 .footerInfo{
   background-color: rgb(250,250,250);
-  padding: 20px 0;
+  padding: 40px 0;
   font-size:14px;
-  line-height: 48px;
+  line-height: 28px;
   font-weight: 700;
 }
+
+.privacy{
+  font-weight: 400;
+}
+
 .footerText{
   max-width: 1272px;
   margin:auto;

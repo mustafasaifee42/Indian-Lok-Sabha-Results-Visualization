@@ -7,6 +7,7 @@ import head from './head.svg';
 
 ReactGA.initialize('UA-140675599-1');
 ReactGA.pageview('/');
+ReactGA.set({ anonymizeIp: true });
 
 function App() {
   return (

@@ -34,7 +34,10 @@ class Visualization extends Component {
                 This project was created my <a href="http://mustafasaifee.com" target='_blank' rel="noopener noreferrer" >Mustafa Saifee</a><br />
                 The data was gathered from the <a href ="https://www.eci.gov.in/" target ="_blank" rel="noopener noreferrer" >Election Commission of India</a> website<br/>
                 For more information contact me via <a href="mailto:saifee.mustafa@gmail.com" target='_blank' rel="noopener noreferrer" >email</a> or via <a href="https://twitter.com/mustafasaifee42" target="_blank" rel="noopener noreferrer" >twitter</a><br/>
-                Datasheet for the visualization can be found <a href="https://raw.githubusercontent.com/mustafasaifee42/India-Lok-Sabha-Results-Data/master/lok-sabha-results.json" target='_blank' rel="noopener noreferrer" >here</a>
+                Datasheet for the visualization can be found <a href="https://raw.githubusercontent.com/mustafasaifee42/India-Lok-Sabha-Results-Data/master/lok-sabha-results.json" target='_blank' rel="noopener noreferrer" >here</a> <br /> <br/>
+                PRIVACY POLICY<br />
+                <span className="privacy">This website does not save any information about you. We do not directly use cookies or other tracking technologies. We do, however, use <a href="https://www.google.com/analytics" target='_blank' rel="noopener noreferrer">Google Analytics</a> for mere statistical reasons. It is possible that <a href="https://www.google.com/analytics" target='_blank' rel="noopener noreferrer">Google Analytics</a> sets cookies or uses other tracking technologies, but this data is not directly accessible by us.<br /><br /></span>
+                This page is hosted on <a href="https://netlify.com" target='_blank' rel="noopener noreferrer">Netlify</a>
             </div>
         </div>
       </div>
