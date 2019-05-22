@@ -14,6 +14,11 @@ const caste ={
   'SC':"SC Candidate",
   'ST':"ST Candidate",
 }
+
+const voterTurnOutNational={
+  '2014':'66.40%',
+  '2009':'56.97%'
+}
 const radius = 10.5;
 const h = 1.5 * radius / Math.cos (Math.PI / 6)
 
@@ -54,6 +59,83 @@ class Cartogram extends Component {
           }
         }
       })
+      if((this.props.filterSelected === 'Female Winners') || (this.props.filterSelected === 'SC/ST Winners') || (this.props.filterSelected === 'Voter TurnOut')) {
+        d3.selectAll('.inforBoxG')
+          .attrs({'opacity': 1})
+        if(this.props.filterSelected === 'Female Winners'){
+          d3.selectAll('.inforBoxG')
+            .attrs({'transform':'translate(370,575)'})
+          d3.selectAll('.infoBoxBG')
+              .attrs({
+                'width':250,
+                "height":95,
+                'stroke-width':1,
+              })
+              
+          d3.selectAll('.infoBoxTitle')
+              .text('No. of Female Winners')
+          d3.selectAll('.infoBoxvalue')
+              .text(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length)
+          d3.selectAll('.infoBoxPercent')
+              .text(`(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length * 100 / 543).toFixed(2)}%)`)
+              .attrs({
+                'x':60,
+              })
+          d3.selectAll('.infoBoxFootNote')
+              .attrs({
+                'opacity':0,
+              })
+        }
+        if(this.props.filterSelected === 'Voter TurnOut'){
+          d3.selectAll('.inforBoxG')
+            .attrs({'transform':'translate(370,535)'})
+          d3.selectAll('.infoBoxBG')
+              .attrs({
+                'width':250,
+                "height":95,
+                'stroke-width':1,
+              })
+              
+          d3.selectAll('.infoBoxTitle')
+              .text('National Voter Turnout')
+          d3.selectAll('.infoBoxvalue')
+              .text(`${voterTurnOutNational[`${this.props.yearSelected}`]}`)
+          d3.selectAll('.infoBoxPercent')
+              .text('')
+          d3.selectAll('.infoBoxFootNote')
+              .attrs({
+                'opacity':0,
+              })
+        }
+        if(this.props.filterSelected === 'SC/ST Winners'){
+          d3.selectAll('.inforBoxG')
+            .attrs({'transform':'translate(370,575)'})
+          d3.selectAll('.infoBoxBG')
+              .attrs({
+                'width':250,
+                "height":110,
+                'stroke-width':1,
+              })
+              
+          d3.selectAll('.infoBoxTitle')
+              .text('No. of SC/ST Winners')
+          d3.selectAll('.infoBoxvalue')
+              .text(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length)
+          d3.selectAll('.infoBoxPercent')
+              .text(`(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length * 100 / 543).toFixed(2)}%)`)
+              .attrs({
+                'x':80,
+              })
+          d3.selectAll('.infoBoxFootNote')
+              .attrs({
+                'opacity':0.5,
+              })
+        }
+    } else {
+      d3.selectAll('.inforBoxG')
+        .attrs({'opacity': 0})
+
+    }
     if((this.props.filterSelected === 'Voter TurnOut') || (this.props.filterSelected === 'Margin of Victory')) {
       d3.selectAll('.colorLegend')
         .attrs({'opacity': 1})
@@ -360,7 +442,64 @@ class Cartogram extends Component {
 
       let keyG = svg.append('g')
         .attrs({ 'transform':'translate(375,650)'})
+      let infoBox = svg.append('g')
+        .attrs({ 
+          'class':'inforBoxG',
+          'transform':'translate(370,590)',
+          'opacity':0,
+      })
       
+      infoBox.append('rect')
+        .attrs({
+          'fill': "#fafafa",
+          'width':250,
+          "height":95,
+          'stroke':'#ddd',
+          'class':'infoBoxBG',
+          'stroke-width':1,
+        })
+        
+      infoBox.append('text')
+        .attrs({
+          'fill': "#000",
+          'x':10,
+          "y":25,
+          'font-size':'16',
+          'font-weight':700,
+          'class': 'infoBoxTitle'
+        })
+        .text('No. of Female Winners')
+      infoBox.append('text')
+        .attrs({
+          'fill': "#000",
+          'x':10,
+          "y":75,
+          'font-size':'42',
+          'class': 'infoBoxvalue'
+        })
+        .text('138')
+      infoBox.append('text')
+        .attrs({
+          'fill': "#000",
+          'x':80,
+          "y":75,
+          'font-size':'20',
+          'font-weight':700,
+          'class': 'infoBoxPercent'
+        })
+        .text('(24%)')
+      infoBox.append('text')
+        .attrs({
+          'fill': "#000",
+          'x':10,
+          "y":100,
+          'font-size':'14',
+          'opacity':0,
+          'font-weight':700,
+          'class': 'infoBoxFootNote'
+        })
+        .text('131 seats are reserved for SC/ST')
+
       keyG.append('circle')
         .attrs({
           'fill': '#000',
