@@ -1,8 +1,12 @@
 import React from 'react';
 import './App.css';
 import Visualization from './Visualization';
+import ReactGA from 'react-ga';
 import Footer from './Footer';
 import head from './head.svg'; 
+
+ReactGA.initialize('UA-140675599-1');
+ReactGA.pageview('/');
 
 function App() {
   return (
