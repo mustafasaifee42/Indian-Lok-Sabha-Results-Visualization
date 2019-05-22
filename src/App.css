@@ -274,3 +274,11 @@ body{
 .SocialMediaShareButton--facebook {
   margin-right:20px;
 }
+
+a{
+  text-decoration: none;
+  color:#1992f6;  
+}
+a:visited{
+  color:#1992f6; 
+}

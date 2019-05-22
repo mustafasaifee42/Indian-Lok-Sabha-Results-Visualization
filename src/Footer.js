@@ -21,10 +21,10 @@ class Visualization extends Component {
         <div className="share">
             Was this your jam? Consider sharing the 💖
             <div className='icons'>
-                <FacebookShareButton url='http://mustafasaifee.com' quote="Lok Sabha election results visualized: " hashtags={['LokSabhaEelctions2019','Cartogram','TileGridMap']}>
+                <FacebookShareButton url='https://loksabharesults.netlify.com/' quote="Lok Sabha election results visualized: " hashtags={['LokSabhaEelctions2019','Cartogram','TileGridMap']}>
                     <FacebookIcon size={32} round={true} />
                 </FacebookShareButton>
-                <TwitterShareButton url='http://mustafasaifee.com' title="Lok Sabha election results visualized: " via="mustafasaifee42" hashtags={['LokSabhaEelctions2019','Cartogram','TileGridMap']}>
+                <TwitterShareButton url='https://loksabharesults.netlify.com/' title="Lok Sabha election results visualized: " via="mustafasaifee42" hashtags={['LokSabhaEelctions2019','IndiaElection2019 ','Cartogram','TileGridMap']}>
                     <TwitterIcon size={32} round={true} />
                 </TwitterShareButton>
             </div>
@@ -33,7 +33,8 @@ class Visualization extends Component {
             <div className="footerText">
                 This project was created my <a href="http://mustafasaifee.com" target='_blank' rel="noopener noreferrer" >Mustafa Saifee</a><br />
                 The data was gathered from the <a href ="https://www.eci.gov.in/" target ="_blank" rel="noopener noreferrer" >Election Commission of India</a> website<br/>
-                For more information contact me via <a href="mailto:saifee.mustafa@gmail.com" target='_blank' rel="noopener noreferrer" >email</a> or via <a href="https://twitter.com/mustafasaifee42" target="_blank" rel="noopener noreferrer" >twitter</a>
+                For more information contact me via <a href="mailto:saifee.mustafa@gmail.com" target='_blank' rel="noopener noreferrer" >email</a> or via <a href="https://twitter.com/mustafasaifee42" target="_blank" rel="noopener noreferrer" >twitter</a><br/>
+                Datasheet for the visualization can be found <a href="https://raw.githubusercontent.com/mustafasaifee42/Indian-Lok-Sabha-Results-Visualization/master/src/data_combined.json" target='_blank' rel="noopener noreferrer" >here</a>
             </div>
         </div>
       </div>
