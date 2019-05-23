@@ -81,9 +81,17 @@ class Cartogram extends Component {
           d3.selectAll('.infoBoxTitle')
               .text('No. of Female Winners')
           d3.selectAll('.infoBoxvalue')
-              .text(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length)
+              .text(() => {
+                if(this.props.yearSelected==='2019')
+                  return "NA" 
+                return data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length
+              })
           d3.selectAll('.infoBoxPercent')
-              .text(`(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length * 100 / 543).toFixed(2)}%)`)
+              .text(() => {
+                if(this.props.yearSelected==='2019')
+                  return "" 
+                return `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length * 100 / 543).toFixed(2)}%)`
+              })
               .attrs({
                 'x':60,
               })
@@ -126,9 +134,17 @@ class Cartogram extends Component {
           d3.selectAll('.infoBoxTitle')
               .text('No. of SC/ST Winners')
           d3.selectAll('.infoBoxvalue')
-              .text(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length)
+              .text(() => {
+                if(this.props.yearSelected==='2019')
+                  return "NA" 
+                return data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length
+              })
           d3.selectAll('.infoBoxPercent')
-              .text(`(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length * 100 / 543).toFixed(2)}%)`)
+              .text(() => {
+                if(this.props.yearSelected==='2019')
+                  return "" 
+                return `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length * 100 / 543).toFixed(2)}%)`
+              })
               .attrs({
                 'x':80,
               })
