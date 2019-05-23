@@ -254,7 +254,7 @@ class Cartogram extends Component {
     d3.selectAll('.Category_Name')
       .html(`${gender[d[`${this.props.yearSelected}-Result`]['1']['Sex']]} · ${caste[d[`${this.props.yearSelected}-Result`]['1']['Caste']]}`)
     d3.selectAll('.Margin_Percent_Value')
-      .html(`${((d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100/d[`${this.props.yearSelected}-Result`]['1']['Votes']).toFixed(1)}%`)
+      .html(`${d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']} (${((d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100/d[`${this.props.yearSelected}-Result`]['1']['Votes']).toFixed(1)}%)`)
   }
   mouseLeave = () => {
     d3.selectAll('.hexHighlight').remove()
