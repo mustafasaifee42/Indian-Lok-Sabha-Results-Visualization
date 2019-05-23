@@ -18,7 +18,7 @@ const caste ={
 const voterTurnOutNational={
   '2014':'66.40%',
   '2009':'56.97%',
-  '2019':'NA'
+  '2019':'Data Missing'
 }
 const radius = 10.5;
 const h = 1.5 * radius / Math.cos (Math.PI / 6)
@@ -83,7 +83,7 @@ class Cartogram extends Component {
           d3.selectAll('.infoBoxvalue')
               .text(() => {
                 if(this.props.yearSelected==='2019')
-                  return "NA" 
+                  return "Data Missing" 
                 return data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length
               })
           d3.selectAll('.infoBoxPercent')
@@ -136,7 +136,7 @@ class Cartogram extends Component {
           d3.selectAll('.infoBoxvalue')
               .text(() => {
                 if(this.props.yearSelected==='2019')
-                  return "NA" 
+                  return "Data Missing" 
                 return data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length
               })
           d3.selectAll('.infoBoxPercent')
