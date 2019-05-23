@@ -243,16 +243,23 @@ class Cartogram extends Component {
       .style('left',`${event.pageX + 10}px`)
     d3.selectAll('.const_Name')
       .html(`${d.Name} (${d.State})`)
+  
     d3.selectAll('.Voter_Turnout_Value')
       .html(`${d[`${this.props.yearSelected}-Result`]['VotersInfo']['TurnOutPercentage']}%`)
+    d3.selectAll('.Category_Name')
+      .html(`${gender[d[`${this.props.yearSelected}-Result`]['1']['Sex']]} · ${caste[d[`${this.props.yearSelected}-Result`]['1']['Caste']]}`)
+    if(this.props.yearSelected === '2019'){
+      d3.selectAll('.Voter_Turnout_Value')
+        .html(`-`)
+      d3.selectAll('.Category_Name')
+        .html(``)
+    }
     d3.selectAll('.Winner_Name')
       .html(`${d[`${this.props.yearSelected}-Result`]['1']['Name']}`)
     d3.selectAll('.Winner_Party')
       .html(`${d[`${this.props.yearSelected}-Result`]['1']['Party']}`)
     d3.selectAll('.Winner_Party_Full_Name')
       .html(`(${PartyName[d[`${this.props.yearSelected}-Result`]['1']['Party']]})`)
-    d3.selectAll('.Category_Name')
-      .html(`${gender[d[`${this.props.yearSelected}-Result`]['1']['Sex']]} · ${caste[d[`${this.props.yearSelected}-Result`]['1']['Caste']]}`)
     d3.selectAll('.Margin_Percent_Value')
       .html(`${d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']} (${((d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100/d[`${this.props.yearSelected}-Result`]['1']['Votes']).toFixed(1)}%)`)
   }
