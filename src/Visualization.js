@@ -7,13 +7,14 @@ class Visualization extends Component {
   constructor(props){
     super(props)
     this.state = {
-      years:['2009','2014'],
-      yearSelected:'2014',
+      years:['2009','2014','2019'],
+      yearSelected:'2019',
       filter:['All','Female Winners','SC/ST Winners','Voter TurnOut','Margin of Victory'],
       alliance:['Parties','Alliances'],
       filterSelected:'All',
       allianceSelected:'Party',
-      allianceButtonActive:'Parties'
+      allianceButtonActive:'Parties',
+      active:true,
     }
   }
   changeYear = (ev) => {
@@ -39,23 +40,35 @@ class Visualization extends Component {
     let yearSelection = this.state.years.map((d,i) => {
       let buttonClass;
       if(this.state.yearSelected === d){
-        buttonClass = 'active'
+        buttonClass = 'activeButton'
       }
       return <Button key={i} className = {buttonClass} onClick={this.changeYear}>{d}</Button>
     })
     let filterSelection = this.state.filter.map((d,i) => {
       let buttonClass;
       if(this.state.filterSelected === d){
-        buttonClass = 'active'
+        buttonClass = 'activeButton'
       }
-      return <Button key={i} className = {buttonClass} onClick={this.changeFilter}>{d}</Button>
+      let act = true;
+      if(this.state.yearSelected === '2019')
+        if(d === 'All' || d === 'Margin of Victory')
+          act = true
+        else
+          act = false
+      return <Button key={i} className = {buttonClass} onClick={this.changeFilter} active={act}>{d}</Button>
     })
     let allianceSelection = this.state.alliance.map((d,i) => {
       let buttonClass;
       if(this.state.allianceButtonActive === d){
-        buttonClass = 'active'
+        buttonClass = 'activeButton'
       }
-      return <Button key={i} className = {buttonClass} onClick={this.changeAllianceFilter}>{d}</Button>
+      let act = true;
+      if(this.state.yearSelected === '2019')
+        if(d === 'All' || d === 'Margin of Victory')
+          act = true
+        else
+          act = false
+      return <Button key={i} className = {buttonClass} onClick={this.changeAllianceFilter} active={act}>{d}</Button>
     })
     return (
       <div>
@@ -75,6 +88,7 @@ class Visualization extends Component {
           yearSelected={this.state.yearSelected}
           filterSelected={this.state.filterSelected}
           allianceSelected={this.state.allianceSelected}
+          active={this.state.active}
         />
       </div>
     )

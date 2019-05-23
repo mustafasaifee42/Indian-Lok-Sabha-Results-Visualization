@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import 'd3-selection-multi';
-import data from './data_combined.json';
+import data from './data_scraped.json';
 import PartyName from './PartyNameList.json';
 import colors from './colorList.json';
 
@@ -17,7 +17,8 @@ const caste ={
 
 const voterTurnOutNational={
   '2014':'66.40%',
-  '2009':'56.97%'
+  '2009':'56.97%',
+  '2019':'NA'
 }
 const radius = 10.5;
 const h = 1.5 * radius / Math.cos (Math.PI / 6)
@@ -46,10 +47,15 @@ class Cartogram extends Component {
     d3.selectAll('.hex')
       .attrs({
         'fill':d => {
+          console.log(d);
           switch(this.props.filterSelected){
             case 'Voter TurnOut':
+              if(d[`${this.props.yearSelected}-Result`]['VotersInfo']['TurnOutPercentage'] === 'NA')
+                return '#fafafa'
               return turnOutScale(d[`${this.props.yearSelected}-Result`]['VotersInfo']['TurnOutPercentage'])
             case 'Margin of Victory':
+              if((d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100/d[`${this.props.yearSelected}-Result`]['1']['Votes'] === 0)
+                return '#fafafa'
               return marginScale((d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100/d[`${this.props.yearSelected}-Result`]['1']['Votes']);
             default:
               if(Object.keys(colors[this.props.allianceSelected]).indexOf(d[`${this.props.yearSelected}-Result`]['1'][this.props.allianceSelected]) > -1){
@@ -165,7 +171,7 @@ class Cartogram extends Component {
                 return 1
               return 0.05;
             case 'SC/ST Winners':
-              if (d[`${this.props.yearSelected}-Result`]['1']['Caste'] !== 'GEN')
+              if ((d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC') || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST') 
                 return 1
               return 0.05;
             default:
@@ -277,6 +283,14 @@ class Cartogram extends Component {
       .key(d => d[`2014-Result`]['1']['Party'])
       .rollup(v => v.length)
       .entries(data);
+    let Result_2019 = d3.nest()
+      .key(d => d[`2019-Result`]['1']['Party'])
+      .rollup(v => v.length)
+      .entries(data);
+    let Result_Alliance_2019 = d3.nest()
+      .key(d => d[`2019-Result`]['1']['Alliance'])
+      .rollup(v => v.length)
+      .entries(data);
     let Result_Alliance_2014 = d3.nest()
       .key(d => d[`2014-Result`]['1']['Alliance'])
       .rollup(v => v.length)
@@ -286,6 +300,11 @@ class Cartogram extends Component {
       .key(d => d[`2014-Result`]['1']['Party'])
       .rollup(v => v.length)
       .entries(data);
+      let Result_Alliance_Parties_2019 = d3.nest()
+        .key(d => d[`2019-Result`]['1']['Alliance'])
+        .key(d => d[`2019-Result`]['1']['Party'])
+        .rollup(v => v.length)
+        .entries(data);
     // eslint-disable-next-line
     let Result_StateWise_2014 = d3.nest()
       .key(d => d[`stateFullName`])
@@ -313,6 +332,7 @@ class Cartogram extends Component {
       .entries(data);
     Result_Alliance_2009 = Result_Alliance_2009.filter(d => d.value > 0).sort((a, b) => d3.descending(a.value, b.value))
     Result_Alliance_2014 = Result_Alliance_2014.filter(d => d.value > 0).sort((a, b) => d3.descending(a.value, b.value))
+    Result_Alliance_2019 = Result_Alliance_2019.filter(d => d.value > 0).sort((a, b) => d3.descending(a.value, b.value))
     Result_Alliance_2014 = Result_Alliance_2014.map(d => {
       Result_Alliance_Parties_2014.forEach(el => {
         if(d.key === el.key){
@@ -338,14 +358,29 @@ class Cartogram extends Component {
       })
       return d
     })
+    Result_Alliance_2019 = Result_Alliance_2019.map(d => {
+      Result_Alliance_Parties_2019.forEach(el => {
+        if(d.key === el.key)
+          d.Party = el.values
+      })
+      console.log(d)
+      d.Party = d.Party.sort((a, b) => d3.descending(a.value, b.value))
+      d.Party = d.Party.map(el => {
+        el.Alliance = d.key
+        return el;
+      })
+      return d
+    })
 
     Result_All_years={
       '2009':Result_2009.sort((a, b) => d3.descending(a.value, b.value)),
-      '2014':Result_2014.sort((a, b) => d3.descending(a.value, b.value))
+      '2014':Result_2014.sort((a, b) => d3.descending(a.value, b.value)),
+      '2019':Result_2019.sort((a, b) => d3.descending(a.value, b.value))
     }
     Result_Alliance_years={
       '2009':Result_Alliance_2009,
-      '2014':Result_Alliance_2014
+      '2014':Result_Alliance_2014,
+      '2019':Result_Alliance_2019
     }
     let svg = d3.selectAll('.map')
       .append('svg')
@@ -399,7 +434,7 @@ class Cartogram extends Component {
         .append('g')
         .attrs({ 
           'class':d => {
-            return `Year_2014_${d[`2014-Result`]['1']['Party'].replace("(", "_").replace("(", "_").replace(")", "_").replace(")", "_")} Year_2009_${d[`2009-Result`]['1']['Party'].replace("(", "_").replace("(", "_").replace(")", "_").replace(")", "_")} State_${d.State} ConstituencyGroup ${el}Group`
+            return `Year_2014_${d[`2014-Result`]['1']['Party'].replace("(", "_").replace("(", "_").replace(")", "_").replace(")", "_")} Year_2019_${d[`2019-Result`]['1']['Party'].replace("(", "_").replace("(", "_").replace(")", "_").replace(")", "_")} Year_2009_${d[`2009-Result`]['1']['Party'].replace("(", "_").replace("(", "_").replace(")", "_").replace(")", "_")} State_${d.State} ConstituencyGroup ${el}Group`
           } 
         })
         .on("mouseover",d => {
