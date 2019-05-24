@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <div className="stickyinfo">
-        2019 live counting. Last Updated 12:30 AM IST. 2019 data is showing lead and not wins. The female winner, SC/ST winner and turnout data is unavailable.
+        The female winner, SC/ST winner and turnout data for 2019 is unavailable.
       </div>
       <div className="head">
         <div className="headImg" >
