@@ -20,6 +20,17 @@ const voterTurnOutNational={
   '2009':'56.97%',
   '2019':'Data Missing'
 }
+
+const totalSeats = {
+  '2009':543,
+  '2014':543,
+  '2019':542
+}
+const display = {
+  '2009':'none',
+  '2014':'none',
+  '2019':'inline'
+}
 const radius = 10.5;
 const h = 1.5 * radius / Math.cos (Math.PI / 6)
 
@@ -86,7 +97,7 @@ class Cartogram extends Component {
               })
           d3.selectAll('.infoBoxPercent')
               .text(() => {
-                return `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length * 100 / 543).toFixed(2)}%)`
+                return `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length * 100 / totalSeats[this.props.yearSelected]).toFixed(2)}%)`
               })
               .attrs({
                 'x':60,
@@ -139,7 +150,7 @@ class Cartogram extends Component {
                 .text(() => {
                   if(this.props.yearSelected==='2019')
                     return "" 
-                  return `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length * 100 / 543).toFixed(2)}%)`
+                  return `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length * 100 / totalSeats[this.props.yearSelected]).toFixed(2)}%)`
                 })
                 .attrs({
                   'x':80,
@@ -156,7 +167,7 @@ class Cartogram extends Component {
             d3.selectAll('.infoBoxvalue')
                 .text(() => data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim').length)
             d3.selectAll('.infoBoxPercent')
-                .text(() =>  `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim').length * 100 / 543).toFixed(2)}%)`)
+                .text(() =>  `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim').length * 100 / totalSeats[this.props.yearSelected]).toFixed(2)}%)`)
                 .attrs({
                   'x':60,
                 })
@@ -492,7 +503,7 @@ class Cartogram extends Component {
         .on('mousemove',d => {
           this.mouseMove(d3.event)
         })
-        .on("mouseout",this.mouseLeave)      
+        .on("mouseout",this.mouseLeave)     
     })
 
     d3.selectAll('.ConstituencyGroup')
@@ -721,7 +732,7 @@ class Cartogram extends Component {
       .attrs({ 'class':'partyBarBG' })
     info.selectAll('.partyBarBG')
       .append('div')
-      .style('width',d => `${d.value * 100/ 543}%`)
+      .style('width',d => `${d.value * 100/ totalSeats[this.props.yearSelected]}%`)
       .style('background-color',d => {
         if(Object.keys(colors['Party']).indexOf(d['key']) > -1){
           return colors['Party'][d['key']]
@@ -731,7 +742,7 @@ class Cartogram extends Component {
     info.selectAll('.partyBarBG')
       .append('div')
       .attrs({'class':'seatShare'})
-      .html(d => `${d.value} (${(d.value*100/543).toFixed(1)}%)`)
+      .html(d => `${d.value} (${(d.value * 100/totalSeats[this.props.yearSelected]).toFixed(1)}%)`)
     
     info.selectAll('.AllianceBars')
       .data(Result_Alliance_years[this.props.yearSelected])
@@ -767,12 +778,12 @@ class Cartogram extends Component {
       .attrs({ 'class':'AllianceBarsBG' })
     info.selectAll('.AllianceBarsBG')
       .append('div')
-      .style('width',d => `${d.value * 100/ 543}%`)
+      .style('width',d => `${d.value * 100/ totalSeats[this.props.yearSelected]}%`)
       .style('background-color',d =>  colors['Alliance'][d['key']])
     info.selectAll('.AllianceBarsBG')
       .append('div')
       .attrs({'class':'seatShare'})
-      .html(d => `${d.value} (${(d.value*100/543).toFixed(1)}%)`)
+      .html(d => `${d.value} (${(d.value*100/totalSeats[this.props.yearSelected]).toFixed(1)}%)`)
 
     let party_bars = info.selectAll('.AllianceBars')
       .append('div')
@@ -803,12 +814,12 @@ class Cartogram extends Component {
         .attrs({ 'class':'partyBarBG' })
       party_bars.selectAll('.partyBarBG')
         .append('div')
-        .style('width',d => `${d.value * 100/ 543}%`)
+        .style('width',d => `${d.value * 100/ totalSeats[this.props.yearSelected]}%`)
         .style('background-color',d => colors["Alliance"][d['Alliance']])
       party_bars.selectAll('.partyBarBG')
         .append('div')
         .attrs({'class':'seatShare'})
-        .html(d => `${d.value} (${(d.value*100/543).toFixed(1)}%)`)
+        .html(d => `${d.value} (${(d.value * 100/totalSeats[this.props.yearSelected]).toFixed(1)}%)`)
       
     if(this.props.allianceSelected === "Alliance"){
       d3.selectAll(".partyBars").style('display','none')
@@ -824,7 +835,8 @@ class Cartogram extends Component {
         <div className='vizArea'>
           <div className={'map'} />
           <div className={'infoSection'}>
-            <div className={'infoTitle'}>India <span className='seat_total'>(Total Seats: 543)</span></div>
+            <div className={'infoTitle'}>India <span className='seat_total'>(Total Seats: {totalSeats[this.props.yearSelected]})</span></div>
+            <div className={'subNote'} style={{display:`${display[this.props.yearSelected]}`}}>Note: Poll cancelled in Vellore</div>
           </div>
         </div>
         <div className='tooltip'>

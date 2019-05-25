@@ -36,7 +36,9 @@ body{
   margin: 10px auto;
   text-align: center;
 }
-
+.subNote{
+  font-style:italic;
+}
 .subHead{
   font-size: 18px;
   font-style: italic;
