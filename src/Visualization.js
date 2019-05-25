@@ -9,7 +9,7 @@ class Visualization extends Component {
     this.state = {
       years:['2009','2014','2019'],
       yearSelected:'2019',
-      filter:['All','Female Winners','SC/ST Winners','Voter TurnOut','Margin of Victory'],
+      filter:['All','Female Winners','SC/ST Winners','Muslim Winners','Voter TurnOut','Margin of Victory'],
       alliance:['Parties','Alliances'],
       filterSelected:'All',
       allianceSelected:'Party',

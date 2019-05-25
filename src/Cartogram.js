@@ -65,7 +65,7 @@ class Cartogram extends Component {
           }
         }
       })
-      if((this.props.filterSelected === 'Female Winners') || (this.props.filterSelected === 'SC/ST Winners') || (this.props.filterSelected === 'Voter TurnOut')) {
+      if((this.props.filterSelected === 'Female Winners') || (this.props.filterSelected === 'SC/ST Winners') || (this.props.filterSelected === 'Voter TurnOut') || (this.props.filterSelected === 'Muslim Winners')) {
         d3.selectAll('.inforBoxG')
           .attrs({'opacity': 1})
         if(this.props.filterSelected === 'Female Winners'){
@@ -82,14 +82,10 @@ class Cartogram extends Component {
               .text('No. of Female Winners')
           d3.selectAll('.infoBoxvalue')
               .text(() => {
-                if(this.props.yearSelected==='2019')
-                  return "Data Missing" 
                 return data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length
               })
           d3.selectAll('.infoBoxPercent')
               .text(() => {
-                if(this.props.yearSelected==='2019')
-                  return "" 
                 return `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length * 100 / 543).toFixed(2)}%)`
               })
               .attrs({
@@ -121,7 +117,7 @@ class Cartogram extends Component {
                 'opacity':0,
               })
         }
-        if(this.props.filterSelected === 'SC/ST Winners'){
+        if((this.props.filterSelected === 'SC/ST Winners') || (this.props.filterSelected === 'Muslim Winners')){
           d3.selectAll('.inforBoxG')
             .attrs({'transform':'translate(370,575)'})
           d3.selectAll('.infoBoxBG')
@@ -130,28 +126,46 @@ class Cartogram extends Component {
                 "height":110,
                 'stroke-width':1,
               })
-              
-          d3.selectAll('.infoBoxTitle')
-              .text('No. of SC/ST Winners')
-          d3.selectAll('.infoBoxvalue')
-              .text(() => {
-                if(this.props.yearSelected==='2019')
-                  return "Data Missing" 
-                return data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length
-              })
-          d3.selectAll('.infoBoxPercent')
-              .text(() => {
-                if(this.props.yearSelected==='2019')
-                  return "" 
-                return `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length * 100 / 543).toFixed(2)}%)`
-              })
-              .attrs({
-                'x':80,
-              })
-          d3.selectAll('.infoBoxFootNote')
-              .attrs({
-                'opacity':0.5,
-              })
+          if(this.props.filterSelected === 'SC/ST Winners') {
+            d3.selectAll('.infoBoxTitle')
+                .text('No. of SC/ST Winners')
+            d3.selectAll('.infoBoxvalue')
+                .text(() => {
+                  if(this.props.yearSelected==='2019')
+                    return "Data Missing" 
+                  return data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length
+                })
+            d3.selectAll('.infoBoxPercent')
+                .text(() => {
+                  if(this.props.yearSelected==='2019')
+                    return "" 
+                  return `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length * 100 / 543).toFixed(2)}%)`
+                })
+                .attrs({
+                  'x':80,
+                })
+            d3.selectAll('.infoBoxFootNote')
+                .attrs({
+                  'opacity':0.5,
+                })
+                .text('131 seats are reserved for SC/ST')
+          }
+          if(this.props.filterSelected === 'Muslim Winners') {
+            d3.selectAll('.infoBoxTitle')
+                .text('No. of Muslim Winners')
+            d3.selectAll('.infoBoxvalue')
+                .text(() => data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim').length)
+            d3.selectAll('.infoBoxPercent')
+                .text(() =>  `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim').length * 100 / 543).toFixed(2)}%)`)
+                .attrs({
+                  'x':60,
+                })
+            d3.selectAll('.infoBoxFootNote')
+                .attrs({
+                  'opacity':0.5,
+                })
+                .text('Total Muslim population: 14.2%')
+          }
         }
     } else {
       d3.selectAll('.inforBoxG')
@@ -190,6 +204,10 @@ class Cartogram extends Component {
               if ((d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC') || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST') 
                 return 1
               return 0.05;
+            case 'Muslim Winners':
+              if((d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim')) 
+                return 1
+              return 0.05
             default:
               return 1;
           }
@@ -218,6 +236,10 @@ class Cartogram extends Component {
               return 0.05
             case 'SC/ST Winners':
               if((d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC') || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST') 
+                return 1
+              return 0.05
+            case 'Muslim Winners':
+              if((d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim')) 
                 return 1
               return 0.05
             default:
@@ -285,6 +307,10 @@ class Cartogram extends Component {
               if (d[`${this.props.yearSelected}-Result`]['1']['Caste'] !== 'GEN')
                 return 1
               return 0.05;
+            case 'Muslim Winners':
+              if((d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim')) 
+                return 1
+              return 0.05
             default:
               return 1;
           }
