@@ -319,6 +319,58 @@ class Cartogram extends Component {
     d3.selectAll('.Percent3')
       .html(`${d[`${this.props.yearSelected}-Result`]['3']['VoteShare']}%`)
   }
+  barsMouseOver = (d) => {
+    let yearSelected = this.props.yearSelected
+    d3.selectAll('.ConstituencyGroup')
+      .attrs({
+        'opacity':function(el){
+          if(d3.select(this).attr('opacity') === '1' && d.key === el[`${yearSelected}-Result`]['1']['Party'])
+            return 1
+          return 0.05
+        },
+      })
+    
+      let count = 0
+      d3.selectAll('.ConstituencyGroup')['_groups'][0].forEach(el => {
+        if(d3.select(el).attr('opacity') === '1')
+          count++
+      })
+      d3.selectAll('.filter-no')
+        .html(count)
+      
+      d3.selectAll('.filter-percent')
+        .html(`(${(count * 100 / 543).toFixed(2)}%)`)
+      d3.selectAll('.state-all')
+        .html(543)
+    d3.select('.state-name')
+      .html(`India`)
+  }
+  allianceMouseOver = (d) => {
+    let yearSelected = this.props.yearSelected
+    d3.selectAll('.ConstituencyGroup')
+      .attrs({
+        'opacity':function(el){
+          if(d3.select(this).attr('opacity') === '1' && d.key === el[`${yearSelected}-Result`]['1']['Alliance'])
+            return 1
+          return 0.05
+        },
+      })
+    
+      let count = 0
+      d3.selectAll('.ConstituencyGroup')['_groups'][0].forEach(el => {
+        if(d3.select(el).attr('opacity') === '1')
+          count++
+      })
+      d3.selectAll('.filter-no')
+        .html(count)
+      
+      d3.selectAll('.filter-percent')
+        .html(`(${(count * 100 / 543).toFixed(2)}%)`)
+      d3.selectAll('.state-all')
+        .html(543)
+    d3.select('.state-name')
+      .html(`India`)
+  }
   mouseLeave = () => {
     d3.selectAll('.hexHighlight').remove()
     d3.selectAll('.tooltip')
@@ -587,6 +639,10 @@ class Cartogram extends Component {
         'class':'partyBars',
         'title':d => PartyName[d.key]
       })
+      .on("mouseover",d => {
+        this.barsMouseOver(d)
+      })
+      .on("mouseout",this.mouseLeave)
     
     info.selectAll('.partyBars')
       .append('div')
@@ -625,6 +681,10 @@ class Cartogram extends Component {
       info.selectAll('.AllianceBars')
         .append('div')
         .attrs({ 'class':'AllianceBar' })
+        .on("mouseover",d => {
+          this.allianceMouseOver(d)
+        })
+        .on("mouseout",this.mouseLeave)
 
       info.selectAll('.AllianceBar')
         .append('div')
@@ -653,6 +713,10 @@ class Cartogram extends Component {
         'class':'party_bars',
         'title':d => PartyName[d.key]
       })
+      .on("mouseover",d => {
+        this.barsMouseOver(d)
+      })
+      .on("mouseout",this.mouseLeave)
       
       party_bars.selectAll('.party_bars')
         .append('div')
