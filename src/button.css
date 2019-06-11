@@ -3,26 +3,32 @@
 }
 
 .button{
-  background-color:#ddd;
-  color:#262626;
+  background-color:#fff !important;
+  color:#aaa !important;
   margin:0;
-  border-radius: 0;
-  padding:15px;
-  font-size: 18px;
-  font-weight: 400;
+  border: 1px solid #c5c9d0 !important;
+  font-family: 'Source Sans Pro', sans-serif !important;
+  border-radius: 3px !important;
+  padding:12px 20px !important;
+  font-size: 14px;
+  font-weight: 700 !important;
   text-align: center;
   flex-grow: 1;
-  margin-right:1px;
-  min-width: 100px;
-  border:0;
+  margin-right:5px !important;
   cursor: pointer;
-
 }
+
 .button:last-of-type{
-  margin-right:0px;
+  margin-right:0px !important;
 }
 
 .activeButton{
   background-color:#1992f6 !important;
   font-weight: 700;
+  color:#fff !important;
+}
+
+.button:hover{
+  color:#262626 !important;
+
 }

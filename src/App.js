@@ -12,9 +12,6 @@ ReactGA.pageview('/');
 function App() {
   return (
     <div className="App">
-      <div className="stickyinfo">
-        SC/ST winner and turnout data for 2019 is unavailable.
-      </div>
       <div className="head">
         <div className="headImg" >
           <img src={head} alt="Logo" height="120" width="600" />

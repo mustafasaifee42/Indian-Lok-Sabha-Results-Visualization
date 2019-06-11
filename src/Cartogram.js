@@ -1,36 +1,19 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import 'd3-selection-multi';
-import data from './data_scraped.json';
+import data from './data.json';
 import PartyName from './PartyNameList.json';
 import colors from './colorList.json';
+import {Table } from 'semantic-ui-react';
 
-const gender ={
-  'M':'Male',
-  'F':"Female",
-}
-const caste ={
-  'GEN':'General Candidate',
-  'SC':"SC Candidate",
-  'ST':"ST Candidate",
-}
-
-const voterTurnOutNational={
-  '2014':'66.40%',
-  '2009':'56.97%',
-  '2019':'Data Missing'
-}
+let capitalize = require('capitalize')
 
 const totalSeats = {
   '2009':543,
   '2014':543,
-  '2019':542
+  '2019':543
 }
-const display = {
-  '2009':'none',
-  '2014':'none',
-  '2019':'inline'
-}
+let stateSeatNoObj = {};
 const radius = 10.5;
 const h = 1.5 * radius / Math.cos (Math.PI / 6)
 
@@ -40,13 +23,6 @@ let getHexPoints = (cx,cy, rad) => {
   let path = `M${cx + rad} ${cy - rad / Math.tan(Math.PI / 3)} L ${cx + rad} ${cy + rad / Math.tan(Math.PI / 3)} L ${cx} ${cy + radius / Math.cos (Math.PI / 6)} L ${cx - rad} ${cy + rad / Math.tan(Math.PI / 3)} L ${cx - rad} ${cy - rad / Math.tan(Math.PI / 3)} L ${cx} ${cy - radius / Math.cos (Math.PI / 6)} Z`
   return path
 }
-
-const marginScale = d3.scaleLinear()
-  .domain([0,33.33,66.66,100])
-  .range(['#ffffd9','#c7e9b4','#1d91c0','#071d58'])
-const turnOutScale = d3.scaleLinear()
-  .domain([30,50,70,90])
-  .range(['#ffffd9','#c7e9b4','#1d91c0','#071d58'])
 
 class Cartogram extends Component {
   constructor(props){
@@ -58,175 +34,217 @@ class Cartogram extends Component {
     d3.selectAll('.hex')
       .attrs({
         'fill':d => {
-          console.log(d);
-          switch(this.props.filterSelected){
-            case 'Voter TurnOut':
-              if(d[`${this.props.yearSelected}-Result`]['VotersInfo']['TurnOutPercentage'] === 'NA')
-                return '#fafafa'
-              return turnOutScale(d[`${this.props.yearSelected}-Result`]['VotersInfo']['TurnOutPercentage'])
-            case 'Margin of Victory':
-              if((d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100/d[`${this.props.yearSelected}-Result`]['1']['Votes'] === 0)
-                return '#fafafa'
-              return marginScale((d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100/d[`${this.props.yearSelected}-Result`]['1']['Votes']);
-            default:
-              if(Object.keys(colors[this.props.allianceSelected]).indexOf(d[`${this.props.yearSelected}-Result`]['1'][this.props.allianceSelected]) > -1){
-                return colors[this.props.allianceSelected][d[`${this.props.yearSelected}-Result`]['1'][this.props.allianceSelected]]
-              }
-              return colors["Party"]["Independent & Others"]
+          if(Object.keys(colors[this.props.allianceSelected]).indexOf(d[`${this.props.yearSelected}-Result`]['1'][this.props.allianceSelected]) > -1){
+            return colors[this.props.allianceSelected][d[`${this.props.yearSelected}-Result`]['1'][this.props.allianceSelected]]
           }
-        }
-      })
-      if((this.props.filterSelected === 'Female Winners') || (this.props.filterSelected === 'SC/ST Winners') || (this.props.filterSelected === 'Voter TurnOut') || (this.props.filterSelected === 'Muslim Winners')) {
-        d3.selectAll('.inforBoxG')
-          .attrs({'opacity': 1})
-        if(this.props.filterSelected === 'Female Winners'){
-          d3.selectAll('.inforBoxG')
-            .attrs({'transform':'translate(370,575)'})
-          d3.selectAll('.infoBoxBG')
-              .attrs({
-                'width':250,
-                "height":95,
-                'stroke-width':1,
-              })
-              
-          d3.selectAll('.infoBoxTitle')
-              .text('No. of Female Winners')
-          d3.selectAll('.infoBoxvalue')
-              .text(() => {
-                return data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length
-              })
-          d3.selectAll('.infoBoxPercent')
-              .text(() => {
-                return `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F').length * 100 / totalSeats[this.props.yearSelected]).toFixed(2)}%)`
-              })
-              .attrs({
-                'x':60,
-              })
-          d3.selectAll('.infoBoxFootNote')
-              .attrs({
-                'opacity':0,
-              })
-        }
-        if(this.props.filterSelected === 'Voter TurnOut'){
-          d3.selectAll('.inforBoxG')
-            .attrs({'transform':'translate(370,535)'})
-          d3.selectAll('.infoBoxBG')
-              .attrs({
-                'width':250,
-                "height":95,
-                'stroke-width':1,
-              })
-              
-          d3.selectAll('.infoBoxTitle')
-              .text('National Voter Turnout')
-          d3.selectAll('.infoBoxvalue')
-              .text(`${voterTurnOutNational[`${this.props.yearSelected}`]}`)
-          d3.selectAll('.infoBoxPercent')
-              .text('')
-          d3.selectAll('.infoBoxFootNote')
-              .attrs({
-                'opacity':0,
-              })
-        }
-        if((this.props.filterSelected === 'SC/ST Winners') || (this.props.filterSelected === 'Muslim Winners')){
-          d3.selectAll('.inforBoxG')
-            .attrs({'transform':'translate(370,575)'})
-          d3.selectAll('.infoBoxBG')
-              .attrs({
-                'width':250,
-                "height":110,
-                'stroke-width':1,
-              })
-          if(this.props.filterSelected === 'SC/ST Winners') {
-            d3.selectAll('.infoBoxTitle')
-                .text('No. of SC/ST Winners')
-            d3.selectAll('.infoBoxvalue')
-                .text(() => {
-                  if(this.props.yearSelected==='2019')
-                    return "Data Missing" 
-                  return data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length
-                })
-            d3.selectAll('.infoBoxPercent')
-                .text(() => {
-                  if(this.props.yearSelected==='2019')
-                    return "" 
-                  return `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST').length * 100 / totalSeats[this.props.yearSelected]).toFixed(2)}%)`
-                })
-                .attrs({
-                  'x':80,
-                })
-            d3.selectAll('.infoBoxFootNote')
-                .attrs({
-                  'opacity':0.5,
-                })
-                .text('131 seats are reserved for SC/ST')
-          }
-          if(this.props.filterSelected === 'Muslim Winners') {
-            d3.selectAll('.infoBoxTitle')
-                .text('No. of Muslim Winners')
-            d3.selectAll('.infoBoxvalue')
-                .text(() => data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim').length)
-            d3.selectAll('.infoBoxPercent')
-                .text(() =>  `(${(data.filter(d => d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim').length * 100 / totalSeats[this.props.yearSelected]).toFixed(2)}%)`)
-                .attrs({
-                  'x':60,
-                })
-            d3.selectAll('.infoBoxFootNote')
-                .attrs({
-                  'opacity':0.5,
-                })
-                .text('Total Muslim population: 14.2%')
-          }
-        }
-    } else {
-      d3.selectAll('.inforBoxG')
-        .attrs({'opacity': 0})
-
-    }
-    if((this.props.filterSelected === 'Voter TurnOut') || (this.props.filterSelected === 'Margin of Victory')) {
-      d3.selectAll('.colorLegend')
-        .attrs({'opacity': 1})
-      if(this.props.filterSelected === 'Voter TurnOut'){
-        d3.selectAll('.marginLegendText')
-          .attrs({ 'opacity': 0});
-        d3.selectAll('.turnoutLegendText')
-          .attrs({ 'opacity': 1})
-      } else {
-        d3.selectAll('.marginLegendText')
-          .attrs({ 'opacity': 1});
-        d3.selectAll('.turnoutLegendText')
-          .attrs({ 'opacity': 0})
-      }
-    } else {
-      d3.selectAll('.colorLegend')
-        .attrs({'opacity': 0})
-    }
-    d3.selectAll('.ConstituencyGroup')
-      .attrs({
-        'opacity':d => {
-          switch(this.props.filterSelected){
-            case 'All':
-              return 1;
-            case 'Female Winners':
-              if (d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F')
-                return 1
-              return 0.05;
-            case 'SC/ST Winners':
-              if ((d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC') || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST') 
-                return 1
-              return 0.05;
-            case 'Muslim Winners':
-              if((d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim')) 
-                return 1
-              return 0.05
-            default:
-              return 1;
-          }
+          return colors["Party"]["Independent & Others"]
         }
       })
     this.createInfoBar() 
+    this.filteredParty()
   }
-  
+  filteredParty = () => {
+    d3.selectAll('.ConstituencyGroup')
+      .attrs({
+        'opacity': (d) => {
+          let op = 1;
+          if(this.props.partyFiltered.length > 0){
+            if(this.props.partyFiltered.indexOf(d[`${this.props.yearSelected}-Result`]['1']['Party']) === -1)
+              op = 0.05
+          }
+          if(!this.props.filterValue.filterAlliances['All']){
+            if(!this.props.filterValue.filterAlliances['NDA']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Alliance'] === 'NDA')
+                op = 0.05
+            }
+            if(!this.props.filterValue.filterAlliances['UPA']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Alliance'] === 'UPA')
+                op = 0.05
+            }
+            if(!this.props.filterValue.filterAlliances['Mahagatbandhan']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Alliance'] === 'Mahagatbandhan')
+                op = 0.05
+            }
+            if(!this.props.filterValue.filterAlliances['Others']){
+              if((d[`${this.props.yearSelected}-Result`]['1']['Alliance'] !== 'UPA') && (d[`${this.props.yearSelected}-Result`]['1']['Alliance'] !== 'NDA') && (d[`${this.props.yearSelected}-Result`]['1']['Alliance'] !== 'Mahagatbandhan'))
+                op = 0.05
+            }
+          }
+          if(!this.props.filterValue.filterSex['All']){
+            if(!this.props.filterValue.filterSex['Male']){
+              if((d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'M') || (!d[`${this.props.yearSelected}-Result`]['1']['Sex']))
+                op = 0.05
+            }
+            if(!this.props.filterValue.filterSex['Female']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F')
+                op = 0.05
+            }
+          }
+          if(!this.props.filterValue.filterMinorities['All']){
+            let arrTemp = [0,0,0,0]
+            if(this.props.filterValue.filterMinorities['Not Available']){
+              if(!d[`${this.props.yearSelected}-Result`]['1']['Caste'] && d[`${this.props.yearSelected}-Result`]['PC Type'] === 'None'  )
+                arrTemp[3] = 1
+            }
+            if(this.props.filterValue.filterMinorities['GEN']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'GEN')
+                arrTemp[0] = 1
+            }
+            if(this.props.filterValue.filterMinorities['SC']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC' || d[`${this.props.yearSelected}-Result`]['PC Type'] === 'SC' )
+                arrTemp[1] = 1
+            }
+            if(this.props.filterValue.filterMinorities['ST']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST' || d[`${this.props.yearSelected}-Result`]['PC Type'] === 'ST')
+                arrTemp[2] = 1
+            }
+            if (arrTemp.indexOf(1) === -1)
+              op = 0.05
+          }
+          if(!this.props.filterValue.filterReligion['All']){
+            if(!this.props.filterValue.filterReligion['Muslim']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim')
+                op = 0.05
+            }
+            if(!this.props.filterValue.filterReligion['Non Muslim']){
+              if(!d[`${this.props.yearSelected}-Result`]['1']['Religion'])
+                op = 0.05
+            }
+          }
+          if(!this.props.filterValue.filterEducation['All']){
+            let arrTemp = [0,0,0,0,0,0]
+            if(this.props.filterValue.filterEducation['Not Available']){
+              if(!d[`${this.props.yearSelected}-Result`]['1']['Education'])
+                arrTemp[0] = 1
+            }
+            let arr_12OrLess  = ['Illiterate','Literate','5th Pass','8th Pass','10th Pass','12th Pass']
+            if(this.props.filterValue.filterEducation['12th or less']){
+              if(arr_12OrLess.indexOf(d[`${this.props.yearSelected}-Result`]['1']['Education']) !== -1)
+                arrTemp[1] = 1
+            }
+            if(this.props.filterValue.filterEducation['Graduate']){
+              if((d[`${this.props.yearSelected}-Result`]['1']['Education'] === 'Graduate') || (d[`${this.props.yearSelected}-Result`]['1']['Education'] === 'Graduate Professional'))
+                arrTemp[2] = 1
+            }
+            if(this.props.filterValue.filterEducation['Post Graduate']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Education'] === 'Post Graduate')
+                arrTemp[3] = 1
+            }
+            if(this.props.filterValue.filterEducation['Doctorate']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Education'] === 'Doctorate')
+                arrTemp[4] = 1
+            }
+            if(this.props.filterValue.filterEducation['Others']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Education'] === 'Others')
+                arrTemp[5] = 1
+            }
+            if (arrTemp.indexOf(1) === -1)
+              op = 0.05
+          }
+          if(!this.props.filterValue.filterAssets['All']){
+            let arrTemp = [0,0,0]
+            if(this.props.filterValue.filterAssets['Not Available']){
+              if(!d[`${this.props.yearSelected}-Result`]['1']['Assets'])
+                arrTemp[2] = 1
+            }
+            if(this.props.filterValue.filterAssets['Crorepati']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Assets'] >= 10000000)
+                arrTemp[0] = 1
+            }
+            if(this.props.filterValue.filterAssets['Non Crorepati']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Assets'] < 10000000)
+                arrTemp[1] = 1
+            }
+            if (arrTemp.indexOf(1) === -1)
+              op = 0.05
+          }
+          if(!this.props.filterValue.filterVoteShare['All']){
+            if(!this.props.filterValue.filterVoteShare['Decisive']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Decisive Victory'])
+                op = 0.05
+            }
+            if(!this.props.filterValue.filterVoteShare['Non Decisive']){
+              if(!d[`${this.props.yearSelected}-Result`]['1']['Decisive Victory'])
+                op = 0.05
+            }
+          }
+          if(!this.props.filterValue.filterVictoryMargin['All']){
+            if(!this.props.filterValue.filterVictoryMargin['0-10%']){
+              let mrgn = (d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100 / d[`${this.props.yearSelected}-Result`]['1']['Votes']
+              if(mrgn < 10)
+                op = 0.05
+            }
+            if(!this.props.filterValue.filterVictoryMargin['10-20%']){
+              let mrgn = (d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100 / d[`${this.props.yearSelected}-Result`]['1']['Votes']
+              if(mrgn >= 10 && mrgn < 20)
+                op = 0.05
+            }
+            if(!this.props.filterValue.filterVictoryMargin['20-30%']){
+              let mrgn = (d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100 / d[`${this.props.yearSelected}-Result`]['1']['Votes']
+              if(mrgn >= 20 && mrgn < 30)
+                op = 0.05
+            }
+            if(!this.props.filterValue.filterVictoryMargin['30-40%']){
+              let mrgn = (d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100 / d[`${this.props.yearSelected}-Result`]['1']['Votes']
+              if(mrgn >= 30 && mrgn < 40)
+                op = 0.05
+            }
+            if(!this.props.filterValue.filterVictoryMargin['40-50%']){
+              let mrgn = (d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100 / d[`${this.props.yearSelected}-Result`]['1']['Votes']
+              if(mrgn >= 40 && mrgn < 50)
+                op = 0.05
+            }
+            if(!this.props.filterValue.filterVictoryMargin['>50%']){
+              let mrgn = (d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100 / d[`${this.props.yearSelected}-Result`]['1']['Votes']
+              if(mrgn >= 50)
+                op = 0.05
+            }
+          }
+          if(!this.props.filterValue.filterCriminalCases['All']){
+            let arrTemp = [0,0,0,0,0,0]
+            if(this.props.filterValue.filterCriminalCases['Murder']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Murder'])
+                arrTemp[0] = 1
+            }
+            if(this.props.filterValue.filterCriminalCases['Criminal Case']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Criminal Cases']  > 0)
+                arrTemp[1] = 1
+            }
+            if(this.props.filterValue.filterCriminalCases['Serious Criminal Case']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Serious Criminal Cases'] > 0 && d[`${this.props.yearSelected}-Result`]['1']['Serious Criminal Cases'] !== undefined){
+                arrTemp[2] = 1
+              }
+            }
+            if(this.props.filterValue.filterCriminalCases['Communal Disharmony']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Communal Disharmony'])
+                arrTemp[3] = 1
+            }
+            if(this.props.filterValue.filterCriminalCases['Crime Against Women']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Crimes against Women'])
+                arrTemp[4] = 1
+            }
+            if(this.props.filterValue.filterCriminalCases['Not Available']){
+              if(d[`${this.props.yearSelected}-Result`]['1']['Criminal Cases'] === undefined){
+                arrTemp[5] = 1
+              }
+            }
+            if (arrTemp.indexOf(1) === -1)
+              op = 0.05
+          }
+          return op
+        }
+      })
+    let count = 0
+    d3.selectAll('.ConstituencyGroup')['_groups'][0].forEach(el => {
+      if(d3.select(el).attr('opacity') === '1')
+        count++
+    })
+    d3.selectAll('.filter-no')
+      .html(count)
+      
+    d3.selectAll('.filter-percent')
+      .html(`(${(count * 100 / 543).toFixed(2)}%)`)
+  }
   mouseMove = (event) => {
     d3.selectAll('.tooltip')
       .style('top',`${event.pageY - 30}px`)
@@ -235,31 +253,28 @@ class Cartogram extends Component {
   mouseOver = (d,event) => {
     d3.selectAll('.ConstituencyGroup')
       .attrs({
-        'opacity':0.05,
-      })
-    d3.selectAll(`.${d.State}Group`)
-      .attrs({
-        'opacity':d => {
-          switch(this.props.filterSelected){
-            case 'Female Winners':
-              if(d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F')
-                return 1
-              return 0.05
-            case 'SC/ST Winners':
-              if((d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'SC') || d[`${this.props.yearSelected}-Result`]['1']['Caste'] === 'ST') 
-                return 1
-              return 0.05
-            case 'Muslim Winners':
-              if((d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim')) 
-                return 1
-              return 0.05
-            default:
-              return 1
-          }
+        'opacity':function(el){
+          if(d3.select(this).attr('opacity') === '1' && d.State === el.State)
+            return 1
+          return 0.05
         },
       })
-    d3.selectAll('.stateName')
-      .text(`${d.stateFullName} - ${d.Name}`)
+    
+      let count = 0
+      d3.selectAll('.ConstituencyGroup')['_groups'][0].forEach(el => {
+        if(d3.select(el).attr('opacity') === '1')
+          count++
+      })
+      d3.selectAll('.filter-no')
+        .html(count)
+      
+      d3.selectAll('.filter-percent')
+        .html(`(${(count * 100 / stateSeatNoObj[d.stateFullName]).toFixed(2)}%)`)
+      d3.selectAll('.state-all')
+        .html(stateSeatNoObj[d.stateFullName])
+    d3.select('.state-name')
+      .html(`${d.stateFullName}`)
+    
     d3.selectAll('.mapG')
       .append('path')
       .attrs({
@@ -275,26 +290,34 @@ class Cartogram extends Component {
       .style('top',`${event.pageY - 30}px`)
       .style('left',`${event.pageX + 10}px`)
     d3.selectAll('.const_Name')
-      .html(`${d.Name} (${d.State})`)
+      .html(`${d.Name} (${d.stateFullName})`)
   
-    d3.selectAll('.Voter_Turnout_Value')
-      .html(`${d[`${this.props.yearSelected}-Result`]['VotersInfo']['TurnOutPercentage']}%`)
-    d3.selectAll('.Category_Name')
-      .html(`${gender[d[`${this.props.yearSelected}-Result`]['1']['Sex']]} · ${caste[d[`${this.props.yearSelected}-Result`]['1']['Caste']]}`)
-    if(this.props.yearSelected === '2019'){
-      d3.selectAll('.Voter_Turnout_Value')
-        .html(`-`)
-      d3.selectAll('.Category_Name')
-        .html(``)
-    }
-    d3.selectAll('.Winner_Name')
-      .html(`${d[`${this.props.yearSelected}-Result`]['1']['Name']}`)
-    d3.selectAll('.Winner_Party')
+    d3.selectAll('.Name1')
+      .html(`${capitalize.words(d[`${this.props.yearSelected}-Result`]['1']['Name'])}`)
+    d3.selectAll('.Party1')
       .html(`${d[`${this.props.yearSelected}-Result`]['1']['Party']}`)
-    d3.selectAll('.Winner_Party_Full_Name')
-      .html(`(${PartyName[d[`${this.props.yearSelected}-Result`]['1']['Party']]})`)
-    d3.selectAll('.Margin_Percent_Value')
-      .html(`${d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']} (${((d[`${this.props.yearSelected}-Result`]['1']['Votes'] - d[`${this.props.yearSelected}-Result`]['2']['Votes']) * 100/d[`${this.props.yearSelected}-Result`]['1']['Votes']).toFixed(1)}%)`)
+    d3.selectAll('.Votes1')
+      .html(`${d[`${this.props.yearSelected}-Result`]['1']['Votes']}`)
+    d3.selectAll('.Percent1')
+    .html(`${d[`${this.props.yearSelected}-Result`]['1']['VoteShare']}%`)
+  
+    d3.selectAll('.Name2')
+      .html(`${capitalize.words(d[`${this.props.yearSelected}-Result`]['2']['Name'])}`)
+    d3.selectAll('.Party2')
+      .html(`${d[`${this.props.yearSelected}-Result`]['2']['Party']}`)
+    d3.selectAll('.Votes2')
+      .html(`${d[`${this.props.yearSelected}-Result`]['2']['Votes']}`)
+    d3.selectAll('.Percent2')
+    .html(`${d[`${this.props.yearSelected}-Result`]['2']['VoteShare']}%`)
+  
+    d3.selectAll('.Name3')
+      .html(`${capitalize.words(d[`${this.props.yearSelected}-Result`]['3']['Name'])}`)
+    d3.selectAll('.Party3')
+      .html(`${d[`${this.props.yearSelected}-Result`]['3']['Party']}`)
+    d3.selectAll('.Votes3')
+      .html(`${d[`${this.props.yearSelected}-Result`]['3']['Votes']}`)
+    d3.selectAll('.Percent3')
+      .html(`${d[`${this.props.yearSelected}-Result`]['3']['VoteShare']}%`)
   }
   mouseLeave = () => {
     d3.selectAll('.hexHighlight').remove()
@@ -306,65 +329,60 @@ class Cartogram extends Component {
         'stroke-opacity':'0.6',
         'stroke-width':'1',
       })
-    d3.selectAll('.ConstituencyGroup')
-      .attrs({
-        'opacity':d => {
-          switch(this.props.filterSelected){
-            case 'Female Winners':
-              if (d[`${this.props.yearSelected}-Result`]['1']['Sex'] === 'F')
-                return 1
-              return 0.05;
-            case 'SC/ST Winners':
-              if (d[`${this.props.yearSelected}-Result`]['1']['Caste'] !== 'GEN')
-                return 1
-              return 0.05;
-            case 'Muslim Winners':
-              if((d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim')) 
-                return 1
-              return 0.05
-            default:
-              return 1;
-          }
-        }
-      })
-    d3.selectAll('.stateName')
-      .text('India')
-    d3.selectAll('.reservedIcon')
-      .attrs({ 'opacity':1 })
+      let count = 0
+    d3.selectAll('.ConstituencyGroup')['_groups'][0].forEach(el => {
+      if(d3.select(el).attr('opacity') === '1')
+        count++
+    })
+    d3.selectAll('.filter-no')
+      .html(count)
+      
+    d3.selectAll('.filter-percent')
+      .html(`(${(count * 100 / 543).toFixed(2)}%)`)
+      d3.selectAll('.state-all')
+        .html('543')
+    d3.select('.state-name')
+      .html(`India`)
+    this.filteredParty();
     
   }
   componentDidMount(){
 
-    let width = window.innerWidth * 2 / 3, height = 820;
-    if(window.innerWidth > 1272) {
-      width = 1272 * 2/3
-    }
+    let width = 808, height = 820;
+    let stateSeatNo = d3.nest()
+      .key(d => d[`stateFullName`])
+      .rollup(v => v.length)
+      .entries(data)
+    stateSeatNo.forEach(d => {
+      stateSeatNoObj[d.key] = d.value
+    })
+    console.log(stateSeatNoObj)
     let Result_2014 = d3.nest()
       .key(d => d[`2014-Result`]['1']['Party'])
       .rollup(v => v.length)
-      .entries(data);
+      .entries(data.filter(d => d[`2014-Result`]['1']['Party'] !== 'NA'));
     let Result_2019 = d3.nest()
       .key(d => d[`2019-Result`]['1']['Party'])
       .rollup(v => v.length)
-      .entries(data);
+      .entries(data.filter(d => d[`2019-Result`]['1']['Party'] !== 'NA'));
     let Result_Alliance_2019 = d3.nest()
       .key(d => d[`2019-Result`]['1']['Alliance'])
       .rollup(v => v.length)
-      .entries(data);
+      .entries(data.filter(d => d[`2019-Result`]['1']['Party'] !== 'NA'));
     let Result_Alliance_2014 = d3.nest()
       .key(d => d[`2014-Result`]['1']['Alliance'])
       .rollup(v => v.length)
-      .entries(data);
+      .entries(data.filter(d => d[`2014-Result`]['1']['Party'] !== 'NA'));
     let Result_Alliance_Parties_2014 = d3.nest()
       .key(d => d[`2014-Result`]['1']['Alliance'])
       .key(d => d[`2014-Result`]['1']['Party'])
       .rollup(v => v.length)
-      .entries(data);
+      .entries(data.filter(d => d[`2014-Result`]['1']['Party'] !== 'NA'));
       let Result_Alliance_Parties_2019 = d3.nest()
         .key(d => d[`2019-Result`]['1']['Alliance'])
         .key(d => d[`2019-Result`]['1']['Party'])
         .rollup(v => v.length)
-        .entries(data);
+        .entries(data.filter(d => d[`2019-Result`]['1']['Party'] !== 'NA'));
     // eslint-disable-next-line
     let Result_StateWise_2014 = d3.nest()
       .key(d => d[`stateFullName`])
@@ -374,16 +392,16 @@ class Cartogram extends Component {
     let Result_2009 = d3.nest()
       .key(d => d[`2009-Result`]['1']['Party'])
       .rollup(v => v.length)
-      .entries(data);
+      .entries(data.filter(d => d[`2009-Result`]['1']['Party'] !== 'NA'));
     let Result_Alliance_2009 = d3.nest()
       .key(d => d[`2009-Result`]['1']['Alliance'])
       .rollup(v => v.length)
-      .entries(data);
+      .entries(data.filter(d => d[`2009-Result`]['1']['Party'] !== 'NA'));
     let Result_Alliance_Parties_2009 = d3.nest()
       .key(d => d[`2009-Result`]['1']['Alliance'])
       .key(d => d[`2009-Result`]['1']['Party'])
       .rollup(v => v.length)
-      .entries(data);
+      .entries(data.filter(d => d[`2009-Result`]['1']['Party'] !== 'NA'));
     // eslint-disable-next-line
     let Result_StateWise_2009 = d3.nest()
       .key(d => d[`stateFullName`])
@@ -423,7 +441,6 @@ class Cartogram extends Component {
         if(d.key === el.key)
           d.Party = el.values
       })
-      console.log(d)
       d.Party = d.Party.sort((a, b) => d3.descending(a.value, b.value))
       d.Party = d.Party.map(el => {
         el.Alliance = d.key
@@ -451,7 +468,7 @@ class Cartogram extends Component {
       })
       .append('g')
       .attrs({ 
-        'transform':'translate(20,70)',
+        'transform':'translate(20,40)',
         'class':'mapG' 
       })
 
@@ -503,7 +520,7 @@ class Cartogram extends Component {
         .on('mousemove',d => {
           this.mouseMove(d3.event)
         })
-        .on("mouseout",this.mouseLeave)     
+        .on("mouseout",this.mouseLeave)      
     })
 
     d3.selectAll('.ConstituencyGroup')
@@ -528,7 +545,7 @@ class Cartogram extends Component {
           'cx':d => d['Coordinate'][0] * radius,
           'cy':d => d['Coordinate'][1] * h,
           'r':d => {
-            if(d['Reserved'] !== 'None')
+            if(d[`${this.props.yearSelected}-Result`]['PC Type'] !== 'None')
               return 3
             return 0
           },
@@ -537,63 +554,6 @@ class Cartogram extends Component {
 
       let keyG = svg.append('g')
         .attrs({ 'transform':'translate(375,650)'})
-      let infoBox = svg.append('g')
-        .attrs({ 
-          'class':'inforBoxG',
-          'transform':'translate(370,590)',
-          'opacity':0,
-      })
-      
-      infoBox.append('rect')
-        .attrs({
-          'fill': "#fafafa",
-          'width':250,
-          "height":95,
-          'stroke':'#ddd',
-          'class':'infoBoxBG',
-          'stroke-width':1,
-        })
-        
-      infoBox.append('text')
-        .attrs({
-          'fill': "#000",
-          'x':10,
-          "y":25,
-          'font-size':'16',
-          'font-weight':700,
-          'class': 'infoBoxTitle'
-        })
-        .text('No. of Female Winners')
-      infoBox.append('text')
-        .attrs({
-          'fill': "#000",
-          'x':10,
-          "y":75,
-          'font-size':'42',
-          'class': 'infoBoxvalue'
-        })
-        .text('138')
-      infoBox.append('text')
-        .attrs({
-          'fill': "#000",
-          'x':80,
-          "y":75,
-          'font-size':'20',
-          'font-weight':700,
-          'class': 'infoBoxPercent'
-        })
-        .text('(24%)')
-      infoBox.append('text')
-        .attrs({
-          'fill': "#000",
-          'x':10,
-          "y":100,
-          'font-size':'14',
-          'opacity':0,
-          'font-weight':700,
-          'class': 'infoBoxFootNote'
-        })
-        .text('131 seats are reserved for SC/ST')
 
       keyG.append('circle')
         .attrs({
@@ -603,7 +563,7 @@ class Cartogram extends Component {
           'cy':60
         })
       keyG.append('text')
-        .text('Seats Reserved for SC/ST')
+        .text('Reserved Seats: 84 for SC & 47 for ST')
         .attrs({
           'fill': '#000',
           'x':10,
@@ -611,92 +571,6 @@ class Cartogram extends Component {
           'font-weight':700
         })
       
-      let colorLegend = keyG.append('g')
-        .attrs({ 
-          'class':'colorLegend',
-          'transform':'translate(0,0)',
-          'opacity':0  
-        })
-      
-      
-
-      let linearGradient = d3.selectAll('.mapSVG')
-          .append("defs")
-          .append("linearGradient")
-          .attrs({"id":"linear-gradient"});
-
-      linearGradient.append("stop")
-        .attrs({
-          "offset":"0%",
-          "stop-color":"#ffffd9"
-        });
-
-      linearGradient.append("stop")
-        .attrs({
-          "offset":"33.33%",
-          "stop-color":'#c7e9b4'
-        });
-
-      linearGradient.append("stop")
-        .attrs({
-          "offset":"66.67%",
-          "stop-color":'#1d91c0'
-        });
-
-      linearGradient.append("stop")
-        .attrs({
-          "offset":"100%",
-          "stop-color":'#071d58'
-        });
-
-      colorLegend.append('rect')
-        .attrs({
-          'x':-5,
-          'y':0,
-          'width':250,
-          'height':20,
-          'fill':"url(#linear-gradient)",
-          'stroke':'#ccc'
-        })
-      colorLegend.append('text')
-        .attrs({
-          'x':-5,
-          'y':35,
-          'class':'marginLegendText',
-          'font-weight':'700',
-          'opacity':0
-        })
-        .text('0%')
-      colorLegend.append('text')
-        .attrs({
-          'x':245,
-          'y':35,
-          'class':'marginLegendText',
-          'text-anchor':'end',
-          'font-weight':'700',
-          'opacity':0
-        })
-        .text('100%')
-      
-      colorLegend.append('text')
-        .attrs({
-          'x':-5,
-          'y':35,
-          'class':'turnoutLegendText',
-          'font-weight':'700',
-          'opacity':0
-        })
-        .text('30%')
-      colorLegend.append('text')
-        .attrs({
-          'x':245,
-          'y':35,
-          'class':'turnoutLegendText',
-          'text-anchor':'end',
-          'font-weight':'700',
-          'opacity':0
-        })
-        .text('90%')
       this.createInfoBar();
   }
 
@@ -714,13 +588,6 @@ class Cartogram extends Component {
         'class':'partyBars',
         'title':d => PartyName[d.key]
       })
-      .on('mouseover',d => {
-        d3.selectAll('.ConstituencyGroup')
-          .attrs({ 'opacity': 0.05 })
-        d3.selectAll(`.Year_${this.props.yearSelected}_${d.key.replace("(", "_").replace("(", "_").replace(")", "_").replace(")", "_")}`)
-          .attrs({ 'opacity': 1 })
-      })
-      .on('mouseout',this.mouseLeave)
     
     info.selectAll('.partyBars')
       .append('div')
@@ -759,15 +626,6 @@ class Cartogram extends Component {
       info.selectAll('.AllianceBars')
         .append('div')
         .attrs({ 'class':'AllianceBar' })
-        .on('mouseover',d => {
-          d3.selectAll('.ConstituencyGroup')
-            .attrs({ 'opacity': 0.05 })
-          d['Party'].forEach(el => {
-            d3.selectAll(`.Year_${this.props.yearSelected}_${el.key.replace("(", "_").replace("(", "_").replace(")", "_").replace(")", "_")}`)
-              .attrs({ 'opacity': 1 })
-          })
-        })
-        .on('mouseout',this.mouseLeave)
 
       info.selectAll('.AllianceBar')
         .append('div')
@@ -796,14 +654,7 @@ class Cartogram extends Component {
         'class':'party_bars',
         'title':d => PartyName[d.key]
       })
-      .on('mouseover',d => {
-        d3.selectAll('.ConstituencyGroup')
-          .attrs({ 'opacity': 0.05 })
-        d3.selectAll(`.Year_${this.props.yearSelected}_${d.key.replace("(", "_").replace("(", "_").replace(")", "_").replace(")", "_")}`)
-          .attrs({ 'opacity': 1 })
-      })
-      .on('mouseout',this.mouseLeave)
-    
+      
       party_bars.selectAll('.party_bars')
         .append('div')
         .attrs({ 'class':'partyNames alliancepartyNames' })
@@ -831,28 +682,50 @@ class Cartogram extends Component {
   }
   render() {
     return ( 
-      <div>
-        <div className='vizArea'>
-          <div className={'map'} />
-          <div className={'infoSection'}>
-            <div className={'infoTitle'}>India <span className='seat_total'>(Total Seats: {totalSeats[this.props.yearSelected]})</span></div>
-            <div className={'subNote'} style={{display:`${display[this.props.yearSelected]}`}}>Note: Poll cancelled in Vellore</div>
+      <div className='vizArea'>
+        <div className='map-message'>
+          <div className="state-selection bold">
+            <span className='state-name'>India</span> — Filtered <span className='filter-no'>543</span> out of <span className='state-all'>543</span> <span className='filter-percent bold'> {`(100.00%)`} </span>
           </div>
         </div>
+        <div className={'map'} />
         <div className='tooltip'>
           <div className='tooltip_Head'>
             <div className='const_Name'>Contituency</div>
-            <div className='Voter_Turnout_tooltip'>Voter TurnOut: <span className='bold Voter_Turnout_Value'>75%</span></div>
           </div>
           <div className='Winner_Info'>
-            <div className='Winner_Name bold'>Winner_name</div>
-            <div className='winner_party_text'>
-              <div className='Winner_Party bold'>BJP</div>
-              <div className='Winner_Party_Full_Name'>(BJP)</div>
-            </div>
+            <Table celled>
+              <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell>Candidate</Table.HeaderCell>
+                  <Table.HeaderCell>Party</Table.HeaderCell>
+                  <Table.HeaderCell className='right'>Votes</Table.HeaderCell>
+                  <Table.HeaderCell className='right'>Pct.</Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
+
+              <Table.Body>
+                <Table.Row>
+                  <Table.Cell className='Name1 ribbon bold'>First</Table.Cell>
+                  <Table.Cell className='Party1 bold'>Cell</Table.Cell>
+                  <Table.Cell className='Votes1 right bold'>Cell</Table.Cell>
+                  <Table.Cell className='Percent1 right bold'>Cell</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell className='Name2'>Cell</Table.Cell>
+                  <Table.Cell className='Party2'>Cell</Table.Cell>
+                  <Table.Cell className='Votes2 right'>Cell</Table.Cell>
+                  <Table.Cell className='Percent2 right'>Cell</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell className='Name3'>Cell</Table.Cell>
+                  <Table.Cell className='Party3'>Cell</Table.Cell>
+                  <Table.Cell className='Votes3 right'>Cell</Table.Cell>
+                  <Table.Cell className='Percent3 right'>Cell</Table.Cell>
+                </Table.Row>
+              </Table.Body>
+            </Table>
           </div>
-          <div className='Category_Name'>M · GEN</div>
-          <div className='Margin_Percent'>Win Margin: <span className='bold Margin_Percent_Value'>75%</span></div>
         </div>
       </div>
     )
