@@ -356,7 +356,6 @@ class Cartogram extends Component {
     stateSeatNo.forEach(d => {
       stateSeatNoObj[d.key] = d.value
     })
-    console.log(stateSeatNoObj)
     let Result_2014 = d3.nest()
       .key(d => d[`2014-Result`]['1']['Party'])
       .rollup(v => v.length)
