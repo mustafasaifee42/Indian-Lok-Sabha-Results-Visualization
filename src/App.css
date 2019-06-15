@@ -1,3 +1,8 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif !important;
@@ -18,15 +23,30 @@ body{
   width:100%;
   font-weight: 700;
 }
+.head{
+  padding:40px 20px 60px 20px;
+  max-width:720px;
+  margin: auto;
+  background-color: rgb(250,250,250);
+  font-size:18px;
+  line-height:28px;
+}
+
 .headImg{
   margin:auto;
   display: flex;
   justify-content: center;
-  margin:50px 0;
+  margin:20px 0 20px 0;
+}
+.head-text{
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.head{
-  padding:40px 20px 60px 20px;
+
+.main-body{
   background-color: rgb(250,250,250);
 }
 
@@ -41,15 +61,7 @@ body{
   font-style:italic;
 }
 .subHead{
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 400;
-  max-width: 720px;
-  color:#262626;
-  margin: auto;
-  text-align: center;
-  line-height: 36px;
-  margin-bottom:50px;
+  margin-bottom:20px;
 }
 
 .title{
@@ -277,6 +289,15 @@ div.text{
   display:none;
 }
 
+
+.tooltip-section2 {
+  position: absolute;	
+  background-color: rgba(250,250,250,1);
+  opacity:0.75;
+  padding:10px;
+  display:none;
+}
+
 .tooltip_Head{
   display: flex;
   justify-content: space-between;
@@ -356,7 +377,7 @@ div.text{
 }
 .footerInfo{
   background-color: rgb(250,250,250);
-  padding: 40px 0;
+  padding: 40px 20px;
   font-size:14px;
   line-height: 28px;
   font-weight: 700;
@@ -515,6 +536,21 @@ a:visited{
   text-align: center;
 }
 
+.map-message-animated-map{
+  margin-left:300px;
+  margin-top:25px;
+  width:375px;
+  justify-content: space-between;
+  border-radius: 2px;
+  font-size: 20px;
+  line-height: 28px;
+  position: absolute;
+}
+.year{
+  font-size:30px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
 .ui.celled.table tr td, .ui.celled.table tr th {
   border-left: 0 !important;
 }
@@ -549,4 +585,161 @@ a:visited{
 
 .ui.table thead th{
   background: none !important; 
+}
+
+.section2{
+  background-color: rgb(250,250,250);
+  border-top:1px solid #ccc;
+  padding: 100px 20px 40px 20px;
+}
+
+.section3{
+  border-top:1px solid #ccc;
+  padding: 100px 20px 40px 20px;
+}
+
+.section-head{
+  font-size:20px;
+  color:#262626 !important;
+  font-weight:700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section-byline{
+  font-size:16px;
+  max-width:720px;
+  font-style: italic;
+  line-height: 28px;
+  text-align: center;
+  margin:20px auto;
+  color:#262626;
+}
+
+.section2-selection{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 10px auto;
+}
+
+.section-subhead{
+  font-size: 16px;
+  font-weight: 700;
+  margin-right:10px;
+}
+
+.ui.selection.dropdown.section2-dropdown{
+  padding-top: 8px !important;
+  flex-grow:0 !important;
+  width:auto !important;
+  min-width: 0px !important;
+}
+.ui.dropdown.section2-dropdown>.text{
+  font-size:16px !important;
+  font-weight:700 !important;
+  color: #262626 !important;
+  line-height: 20px !important;
+  width:auto !important;
+}
+
+.small-multiple-cartogram{
+  width:480px;
+}
+
+.section2-viz{
+  display:flex;
+  flex-wrap: wrap;
+  margin-top:30px;
+  margin-bottom:40px;
+}
+.vizArea{
+  flex-grow: 0;
+}
+
+.ui.selection.dropdown.state-dropdown{
+  padding-top: 8px !important;
+  margin-right:10px;
+  flex-grow:0 !important;
+  width:auto !important;
+  min-width: 0px !important;
+}
+.ui.dropdown.state-dropdown>.text{
+  font-size:16px !important;
+  font-weight:700 !important;
+  color: #262626 !important;
+  line-height: 20px !important;
+  width:auto !important;
+}
+.ui.dropdown.state-dropdown>.visible.menu.transition{
+  min-width: 220px !important;
+}
+.ui.dropdown.section2-dropdown>.visible.menu.transition{
+  min-width: 220px !important;
+}
+
+.italic{
+  font-style: italic;
+  font-size: 18px;
+}
+
+.middle{
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.arrow-icon{
+  margin-top: 24px;
+  margin-right: 7px;
+}
+
+filter-unit{
+  display: flex;
+  justify-content: center;
+}
+.subText{
+  font-size:14px;
+  font-style: italic;
+  margin-top:-20px;
+}
+.subTextCopy{
+  color:#aaa;
+  width:260px;
+}
+
+@media only screen and (max-width: 900px) {
+  .subText {
+    display: none;
+  }
+  .arrow-icon{
+    display: none;
+  }
+}
+
+.map-animated-voteShare-map{
+  display:flex;
+  justify-content: center;
+
+}
+
+.play-pause-icon{
+  pointer-events: none;
+}
+
+.year-sub-text{
+  font-size: 14px;
+  font-style: italic;
+  color: #999;
+}
+
+.scrollOptions{
+  display: flex;
+  justify-content: center;
+  margin:40px 0 120px 0;
+}
+
+.infoText{
+  font-size: 16px;
+  color:#999;
+  font-style: italic;
 }
