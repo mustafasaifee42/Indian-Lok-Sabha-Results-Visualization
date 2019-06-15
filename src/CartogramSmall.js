@@ -418,7 +418,7 @@ class Cartogram extends Component {
           })
         break;
       case 'Graduate':
-        let arr_12OrLess  = ['Illiterate','Literate','5th Pass','8th Pass','10th Pass','12th Pass']
+        let arr_12OrLess  = ['Illiterate','Literate','5th Pass','8th Pass','10th Pass','12th Pass','Others']
         d3.selectAll(`.hex-animated-map`)
           .attrs({
             'opacity': function(d){
