@@ -735,7 +735,7 @@ filter-unit{
 .scrollOptions{
   display: flex;
   justify-content: center;
-  margin:80px 0 120px 0;
+  margin:40px 0 120px 0;
 }
 
 .infoText{
