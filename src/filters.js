@@ -42,7 +42,8 @@ class Visualization extends Component {
       filterSex:{
         'All':true,
         'Male':false,
-        'Female':false
+        'Female':false,
+        'Third Gender':false,
       },
       filterMinorities:{
         'All':true,
@@ -275,10 +276,11 @@ class Visualization extends Component {
             </div>
           </div>
           <div className="filters-unit filters-unit-two">
-            Filter By Sex
+            Filter By Gender
             <div className="filters filterCheckBox">
               <Checkbox label='Male'  value='Male' onChange={this.filterSex}/>
               <Checkbox label='Female' value='Female' onChange={this.filterSex}/>
+              <Checkbox label='Third Gender' value='Third Gender' onChange={this.filterSex}/>
             </div>
           </div>
           <div className="filters-unit filters-unit-two">
