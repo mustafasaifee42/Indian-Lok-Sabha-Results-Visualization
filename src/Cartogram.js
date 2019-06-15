@@ -562,8 +562,9 @@ class Cartogram extends Component {
         .append('g')
         .attrs({ 
           'class':d => {
-            return `Year_2014_${d[`2014-Result`]['1']['Party'].replace("(", "_").replace("(", "_").replace(")", "_").replace(")", "_")} Year_2019_${d[`2019-Result`]['1']['Party'].replace("(", "_").replace("(", "_").replace(")", "_").replace(")", "_")} Year_2009_${d[`2009-Result`]['1']['Party'].replace("(", "_").replace("(", "_").replace(")", "_").replace(")", "_")} State_${d.State} ConstituencyGroup ${el}Group`
-          } 
+            return `ConstituencyGroup ${el}Group`
+          },
+          'opacity':'1',
         })
         .on("mouseover",d => {
           this.mouseOver(d,d3.event)

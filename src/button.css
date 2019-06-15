@@ -2,6 +2,39 @@
   display: flex;
 }
 
+.scroll-buttons{
+  background-color:#fff;
+  color:#1992f6;
+  margin:0;
+  border: 1px solid #c5c9d0;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding:20px 20px 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.scroll-link{
+  margin-right:20px;
+
+}
+.scroll-link:last-of-type{
+  margin-right:0;
+}
+
+.scroll-buttons>a{
+  text-decoration: none;
+  color:inherit !important;  
+}
+.scroll-buttons>a:visited{
+  color:inherit !important;  
+}
+
+.button-icon{
+  font-size: 30px;
+
+}
 .button{
   background-color:#fff !important;
   color:#aaa !important;

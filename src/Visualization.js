@@ -142,7 +142,7 @@ class Visualization extends Component {
       return <Button key={i} className = {buttonClass} onClick={this.changeAllianceFilter}>{d}</Button>
     })
     return (
-      <div>
+      <div id='cartogram'>
         <div className="filters-container">
           <div className="filters-top">
             <div className="filters-level-one">
