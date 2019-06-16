@@ -26,7 +26,8 @@ function App() {
           <div className="subHead">The following interactive cartograms visualize the general election results, from national standings down to individual constituencies and an analysis of the result through different elections. <span className="infoText">A cartogram is a distorted map. Rather than reflect actual geographic boundaries and spaces, the boundaries and spaces are changed to more accurately tell the story of the data it’s showing. <span className="bold">Each hexagon in the map represents individual constituencies.</span></span></div>
           <div className='scrollOptions'>
             <a href="#cartogram"  className='scroll-link'><div className='scroll-buttons'><span role='img' aria-label="balot-box emoji" className='button-icon'>🗳️</span><br/>Scroll to Election Result Cartogram</div></a>
-            <a href="#animated-cartogram" className='scroll-link'><div className='scroll-buttons'><span role='img' aria-label="balot-box emoji" className='button-icon'>🗳️</span><br />Scroll to Election Result Through Time Cartogram</div></a>
+            <a href="#animated-cartogram" className='scroll-link'><div className='scroll-buttons'><span role='img' aria-label="balot-box emoji" className='button-icon'>🗳️</span><br />Scroll to Election Result Through Time</div></a>
+            <a href="#minister-list" className='scroll-link'><div className='scroll-buttons'><span role='img' aria-label="balot-box emoji" className='button-icon'>🏆</span><br />Scroll to All Winners List</div></a>
           </div>
         </div>
       </div>
