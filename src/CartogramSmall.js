@@ -823,26 +823,26 @@ class Cartogram extends Component {
             <Table celled>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>Year</Table.HeaderCell>
-                  <Table.HeaderCell>Winning Candidate</Table.HeaderCell>
-                  <Table.HeaderCell>Party</Table.HeaderCell>
+                  <Table.HeaderCell className='tooltip-td'>Year</Table.HeaderCell>
+                  <Table.HeaderCell className='tooltip-td'>Winning Candidate</Table.HeaderCell>
+                  <Table.HeaderCell className='tooltip-td'>Party</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
               <Table.Body>
                 <Table.Row>
-                  <Table.Cell>2009</Table.Cell>
-                  <Table.Cell className='Name1-section2 bold'>Cell</Table.Cell>
-                  <Table.Cell className='Party1-section2 bold'>Cell</Table.Cell>
+                  <Table.Cell className='tooltip-td'>2009</Table.Cell>
+                  <Table.Cell className='Name1-section2 bold tooltip-td'>Cell</Table.Cell>
+                  <Table.Cell className='Party1-section2 bold tooltip-td'>Cell</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                  <Table.Cell>2014</Table.Cell>
-                  <Table.Cell className='Name2-section2 bold'>Cell</Table.Cell>
-                  <Table.Cell className='Party2-section2 bold'>Cell</Table.Cell>
+                  <Table.Cell className='tooltip-td'>2014</Table.Cell>
+                  <Table.Cell className='Name2-section2 bold tooltip-td'>Cell</Table.Cell>
+                  <Table.Cell className='Party2-section2 bold tooltip-td'>Cell</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                  <Table.Cell>2019</Table.Cell>
-                  <Table.Cell className='Name3-section2 bold'>Cell</Table.Cell>
-                  <Table.Cell className='Party3-section2 bold'>Cell</Table.Cell>
+                  <Table.Cell className='tooltip-td'>2019</Table.Cell>
+                  <Table.Cell className='Name3-section2 bold tooltip-td'>Cell</Table.Cell>
+                  <Table.Cell className='Party3-section2 bold tooltip-td'>Cell</Table.Cell>
                 </Table.Row>
               </Table.Body>
             </Table>

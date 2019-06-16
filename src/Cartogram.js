@@ -761,31 +761,31 @@ class Cartogram extends Component {
             <Table celled>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>Candidate</Table.HeaderCell>
-                  <Table.HeaderCell>Party</Table.HeaderCell>
-                  <Table.HeaderCell className='right'>Votes</Table.HeaderCell>
-                  <Table.HeaderCell className='right'>Pct.</Table.HeaderCell>
+                  <Table.HeaderCell className='tooltip-td' >Candidate</Table.HeaderCell>
+                  <Table.HeaderCell className='tooltip-td'>Party</Table.HeaderCell>
+                  <Table.HeaderCell className='right tooltip-td'>Votes</Table.HeaderCell>
+                  <Table.HeaderCell className='right tooltip-td'>Pct.</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
 
               <Table.Body>
                 <Table.Row>
-                  <Table.Cell className='Name1 ribbon bold'>First</Table.Cell>
-                  <Table.Cell className='Party1 bold'>Cell</Table.Cell>
-                  <Table.Cell className='Votes1 right bold'>Cell</Table.Cell>
-                  <Table.Cell className='Percent1 right bold'>Cell</Table.Cell>
+                  <Table.Cell className='Name1 ribbon bold tooltip-td'>First</Table.Cell>
+                  <Table.Cell className='Party1 bold tooltip-td'>Cell</Table.Cell>
+                  <Table.Cell className='Votes1 right bold tooltip-td'>Cell</Table.Cell>
+                  <Table.Cell className='Percent1 right bold tooltip-td'>Cell</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                  <Table.Cell className='Name2'>Cell</Table.Cell>
-                  <Table.Cell className='Party2'>Cell</Table.Cell>
-                  <Table.Cell className='Votes2 right'>Cell</Table.Cell>
-                  <Table.Cell className='Percent2 right'>Cell</Table.Cell>
+                  <Table.Cell className='Name2 tooltip-td'>Cell</Table.Cell>
+                  <Table.Cell className='Party2 tooltip-td'>Cell</Table.Cell>
+                  <Table.Cell className='Votes2 right tooltip-td'>Cell</Table.Cell>
+                  <Table.Cell className='Percent2 right tooltip-td'>Cell</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                  <Table.Cell className='Name3'>Cell</Table.Cell>
-                  <Table.Cell className='Party3'>Cell</Table.Cell>
-                  <Table.Cell className='Votes3 right'>Cell</Table.Cell>
-                  <Table.Cell className='Percent3 right'>Cell</Table.Cell>
+                  <Table.Cell className='Name3 tooltip-td'>Cell</Table.Cell>
+                  <Table.Cell className='Party3 tooltip-td'>Cell</Table.Cell>
+                  <Table.Cell className='Votes3 right tooltip-td'>Cell</Table.Cell>
+                  <Table.Cell className='Percent3 right tooltip-td'>Cell</Table.Cell>
                 </Table.Row>
               </Table.Body>
             </Table>

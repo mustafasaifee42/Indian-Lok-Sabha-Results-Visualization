@@ -564,20 +564,9 @@ a:visited{
   background: none !important;
 }
 
-.ui.table td{
+.tooltip-td{
   padding:5px !important;
   padding-right:15px !important;
-}
-.ui.table td>.ui.ribbon.label{
-  left:0 !important;
-  margin-right: 0 !important;
-  padding: 3px !important;
-}
-.ui.ribbon.label {
-  border-radius: 2px !important;
-  border-color: rgba(0,0,0,0) !important;
-  font-size: 14px !important;
-  font-weight: 700 !important;
 }
 .right{
   text-align: right !important;
@@ -742,4 +731,8 @@ filter-unit{
   font-size: 16px;
   color:#999;
   font-style: italic;
+}
+
+#minister-list{
+  padding:100px 20px 60px 20px;
 }
