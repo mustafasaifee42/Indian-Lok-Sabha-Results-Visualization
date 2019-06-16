@@ -19,7 +19,7 @@ class Visualization extends Component {
     return (
       <div>
         <div className="share">
-            Was this your jam? Consider sharing the <span aria-label="love-emoji" role="img">💖</span>
+            Consider sharing the <span aria-label="love-emoji" role="img">💖</span>
             <div className='icons'>
                 <FacebookShareButton url='https://loksabharesults.netlify.com/' quote="Lok Sabha election results visualized: " hashtags={['LokSabhaEelctions2019','Cartogram','TileGridMap']}>
                     <FacebookIcon size={32} round={true} />
