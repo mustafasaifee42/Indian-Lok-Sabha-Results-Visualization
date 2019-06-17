@@ -14,7 +14,7 @@ class Visualization extends Component {
         <div className='table-constituency'>{this.props.Constituency}</div>
         <div className='table-state'>{this.props.State}</div>
         <div className='table-education'>{this.props.Education}</div>
-        <div className='table-criminal-cases'>{this.props.CriminalCases}</div>
+        <div className='table-criminal-cases' style={ {fontWeight: `${this.props.CriminalCaseWeight}` }}>{this.props.CriminalCases}</div>
         <div className='table-assets'>{`${this.props.Assets}`}</div>
       </div>
     )

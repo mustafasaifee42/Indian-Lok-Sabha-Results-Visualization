@@ -133,6 +133,7 @@ class Visualization extends Component {
           Votes={`${numDifferentiation(d['2019-Result']['1']['Votes'])}`}
           VoteShare = {d['2019-Result']['1']['VoteShare']}
           Color = {color}
+          CriminalCaseWeight={!d['2019-Result']['1']['Criminal Cases'] ? '400' : '700'}
         />
       )
     })
