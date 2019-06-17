@@ -5,9 +5,9 @@
 }
 
 .table-body{
-  padding: 10px 20px 10px 10px;
+  padding: 12.5px 10px 12.5px 10px;
   background-color: #fff;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 6px rgba(200,200,200,0.3);
   margin: 0px auto 15px auto;
   display: flex;
   max-width: 1440px;
@@ -15,6 +15,7 @@
   font-size:16px;
   font-weight: 400;
   line-height: 26px;
+  color: #262626 !important;
 }
 
 .table-no{
@@ -93,4 +94,13 @@
 
 .table-no:hover{
   color:#999;
+}
+
+.ADR-Link{
+  cursor: pointer !important;
+}
+
+.ADR-Link:hover{
+  box-shadow: 0 1px 6px rgba(200,200,200,0.7);
+
 }
