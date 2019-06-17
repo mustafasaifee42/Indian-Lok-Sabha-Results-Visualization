@@ -140,7 +140,7 @@ class Visualization extends Component {
     })
     return (
       <div id='minister-list'>
-        <div className='section-head'>All Member of Parliaments Elected in 2019 for All 543 Constituencies</div>
+        <div className='section-head'>List of Winners in Lok Sabha 2019 for All 543 Constituencies</div>
         <div className='section-byline'>This section lists all the winners and their background. Click on the header to sort the winners.</div>
         <div className='table-body mp-table-head-bg' style={ {borderLeft: `5px solid rgba(255,255,255,0)` }}>
           <div className='table-no mp-table-head'>#</div>
