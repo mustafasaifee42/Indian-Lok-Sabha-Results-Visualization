@@ -136,6 +136,7 @@ class Visualization extends Component {
           Color = {color}
           CriminalCaseWeight={!d['2019-Result']['1']['Criminal Cases'] ? '400' : '700'}
           Link={d['2019-Result']['1']['ADR-Profile']}
+          PCType={d['2019-Result']['PC Type']}
         />
       )
     })
