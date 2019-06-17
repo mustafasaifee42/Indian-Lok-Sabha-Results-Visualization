@@ -61,12 +61,16 @@ class Visualization extends Component {
 
   }
   sortByEducation = () => {
+    data2.sort((x, y) => d3.ascending(parseInt(x['Constituency No']), parseInt(y['Constituency No'])))
+    data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     data2.sort((x, y) => d3.descending(x[`2019-Result`]['1']['EducationIndx'], y[`2019-Result`]['1']['EducationIndx']))
     this.setState({
       data: data2
     })
   }
   sortByCriminalCases = () => {
+    data2.sort((x, y) => d3.ascending(parseInt(x['Constituency No']), parseInt(y['Constituency No'])))
+    data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     data2.sort((x, y) => d3.descending(x[`2019-Result`]['1']['Criminal Cases'], y[`2019-Result`]['1']['Criminal Cases']))
     this.setState({
       data: data2
@@ -79,20 +83,33 @@ class Visualization extends Component {
       data: data2
     })
   }
-  sortByVotes = () => {
-    data2.sort((x, y) => d3.descending(x[`2019-Result`]['1']['Votes'], y[`2019-Result`]['1']['Votes']))
-    this.setState({
-      data: data2
-    })
-  }
   sortByName = () => {
+    data2.sort((x, y) => d3.ascending(parseInt(x['Constituency No']), parseInt(y['Constituency No'])))
+    data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     data2.sort((x, y) => d3.ascending(x[`2019-Result`]['1']['Name'], y[`2019-Result`]['1']['Name']))
     this.setState({
       data: data2
     })
   }
   sortConstituency = () => {
+    data2.sort((x, y) => d3.ascending(parseInt(x['Constituency No']), parseInt(y['Constituency No'])))
+    data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     data2.sort((x, y) => d3.ascending(x['Name'], y['Name']))
+    this.setState({
+      data: data2
+    })
+  }
+  sortParty = () => {
+    data2.sort((x, y) => d3.ascending(parseInt(x['Constituency No']), parseInt(y['Constituency No'])))
+    data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
+    data2.sort((x, y) => d3.ascending(x[`2019-Result`]['1']['Party'], y[`2019-Result`]['1']['Party']))
+    this.setState({
+      data: data2
+    })
+  }
+  sortState = () => {
+    data2.sort((x, y) => d3.ascending(parseInt(x['Constituency No']), parseInt(y['Constituency No'])))
+    data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     this.setState({
       data: data2
     })
@@ -125,11 +142,12 @@ class Visualization extends Component {
         <div className='section-byline'>This section lists all the winners and their background. Click on the header to sort the winners.</div>
         <div className='table-body mp-table-head-bg' style={ {borderLeft: `5px solid rgba(255,255,255,0)` }}>
           <div className='table-name mp-table-head' onClick={this.sortByName}>Name</div>
+          <div className='mp-table-head table-party' onClick={this.sortParty}>Party</div>
           <div className='mp-table-head table-constituency' onClick={this.sortConstituency}>Constituency</div>
+          <div className='mp-table-head table-state' onClick={this.sortState}>State</div>
           <div className='mp-table-head table-education' onClick={this.sortByEducation}>Education</div>
           <div className='mp-table-head table-criminal-cases' onClick={this.sortByCriminalCases}>Criminal Cases</div>
           <div className='mp-table-head table-assets' onClick={this.sortByAssets}>Total Assets</div>
-          <div className='mp-table-head table-votes' onClick={this.sortByVotes}>Total Votes</div>
         </div>
         {cards}
       </div>

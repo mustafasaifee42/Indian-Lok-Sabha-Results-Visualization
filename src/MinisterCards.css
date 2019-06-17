@@ -5,53 +5,45 @@
 }
 
 .table-body{
-  padding: 5px 20px;
+  padding: 10px 20px 10px 10px;
   background-color: #fff;
   box-shadow: 0 1px 6px rgba(0,0,0,0.1);
   margin: 0px auto 15px auto;
   display: flex;
   max-width: 1440px;
   font-size:16px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 26px;
 }
 
 .table-name{
-  width:27.5%;
-  font-size: 18px;
-  font-weight: 700;
+  width:25%;
+  font-size: 16px;
   padding-right: 15px;
+  font-weight: 700;
 }
 .table-constituency{
   width:15%;
   padding-right: 15px;
 }
 .table-education{
-  width:17.5%;
+  width:16.5%;
   padding-right: 15px;
 }
 .table-assets{
-  width:15%;
-  padding-right: 15px;
-}
-.table-criminal-cases{
-  width:15%;
-  padding-right: 15px;
-}
-.table-votes{
   width:10%;
   text-align: right;
 }
+.table-criminal-cases{
+  width:10%;
+  padding-right: 15px;
+}
 .table-party{
-  font-size: 16px;
+  width:8.5%;
   font-weight: 700;
 }
 .table-state{
-  font-size: 16px;
-  font-weight: 400;
-}
-.table-percent{
-  font-size: 16px;
+  width:15%;
   font-weight: 400;
 }
 
@@ -59,6 +51,7 @@
   font-size: 14px;
   text-transform: uppercase;
   color:#999;
+  font-weight: 700;
   cursor: pointer;
 }
 

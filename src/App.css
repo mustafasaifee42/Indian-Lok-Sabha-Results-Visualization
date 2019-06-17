@@ -735,4 +735,5 @@ filter-unit{
 
 #minister-list{
   padding:100px 20px 60px 20px;
+  border-top:1px solid #ccc;
 }
