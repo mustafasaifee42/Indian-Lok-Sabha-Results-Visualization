@@ -108,7 +108,7 @@ class Visualization extends Component {
     })
   }
   sortState = () => {
-    data2.sort((x, y) => d3.ascending(parseInt(x['Constituency No']), parseInt(y['Constituency No'])))
+    data2.sort((x, y) => d3.ascending(x[`2019-Result`]['1']['Party'], y[`2019-Result`]['1']['Party']))
     data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     this.setState({
       data: data2
@@ -123,6 +123,7 @@ class Visualization extends Component {
       return (
         <Cards
           key={i} 
+          SrNo={i + 1}
           Name={capitalize.words(d['2019-Result']['1']['Name'])}
           Party={d['2019-Result']['1']['Party']}
           Constituency={`${d['Name']}`}
@@ -142,6 +143,7 @@ class Visualization extends Component {
         <div className='section-head'>All Member of Parliaments Elected in 2019 for All 543 Constituencies</div>
         <div className='section-byline'>This section lists all the winners and their background. Click on the header to sort the winners.</div>
         <div className='table-body mp-table-head-bg' style={ {borderLeft: `5px solid rgba(255,255,255,0)` }}>
+          <div className='table-no mp-table-head'>#</div>
           <div className='table-name mp-table-head' onClick={this.sortByName}>Name</div>
           <div className='mp-table-head table-party' onClick={this.sortParty}>Party</div>
           <div className='mp-table-head table-constituency' onClick={this.sortConstituency}>Constituency</div>

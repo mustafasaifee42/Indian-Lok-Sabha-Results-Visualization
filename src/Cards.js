@@ -9,6 +9,7 @@ class Visualization extends Component {
   render() {
     return (
       <div className='table-body' style={ {borderLeft: `5px solid ${this.props.Color}` }}>
+        <div className='table-no'>{this.props.SrNo}</div>
         <div className='table-name'>{this.props.Name}</div>
         <div className='table-party' style={ {color: `${this.props.Color}` }}>{this.props.Party}</div>
         <div className='table-constituency'>{this.props.Constituency}</div>
