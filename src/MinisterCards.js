@@ -43,7 +43,10 @@ class Visualization extends Component {
   constructor(props){
     super(props)
     this.state = {
-      data: data
+      data: data,
+      showNo:10,
+      showText:'Show All 543 Winners',
+      sortedBy:null,
     }
   }
   componentWillMount(){
@@ -65,7 +68,8 @@ class Visualization extends Component {
     data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     data2.sort((x, y) => d3.descending(x[`2019-Result`]['1']['EducationIndx'], y[`2019-Result`]['1']['EducationIndx']))
     this.setState({
-      data: data2
+      data: data2,
+      sortedBy:'Education',
     })
   }
   sortByCriminalCases = () => {
@@ -73,14 +77,16 @@ class Visualization extends Component {
     data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     data2.sort((x, y) => d3.descending(x[`2019-Result`]['1']['Criminal Cases'], y[`2019-Result`]['1']['Criminal Cases']))
     this.setState({
-      data: data2
+      data: data2,
+      sortedBy:'Criminal Cases',
     })
   }
   sortByAssets = () => {
     data2.sort((x, y) => d3.descending(x[`2019-Result`]['1']['Assets'], y[`2019-Result`]['1']['Assets']))
     console.log(data)
     this.setState({
-      data: data2
+      data: data2,
+      sortedBy:'Assets',
     })
   }
   sortByName = () => {
@@ -88,7 +94,8 @@ class Visualization extends Component {
     data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     data2.sort((x, y) => d3.ascending(x[`2019-Result`]['1']['Name'], y[`2019-Result`]['1']['Name']))
     this.setState({
-      data: data2
+      data: data2,
+      sortedBy:'Name',
     })
   }
   sortConstituency = () => {
@@ -96,7 +103,8 @@ class Visualization extends Component {
     data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     data2.sort((x, y) => d3.ascending(x['Name'], y['Name']))
     this.setState({
-      data: data2
+      data: data2,
+      sortedBy:'Constituency',
     })
   }
   sortParty = () => {
@@ -104,57 +112,76 @@ class Visualization extends Component {
     data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     data2.sort((x, y) => d3.ascending(x[`2019-Result`]['1']['Party'], y[`2019-Result`]['1']['Party']))
     this.setState({
-      data: data2
+      data: data2,
+      sortedBy:'Party',
     })
   }
   sortState = () => {
     data2.sort((x, y) => d3.ascending(x[`2019-Result`]['1']['Party'], y[`2019-Result`]['1']['Party']))
     data2.sort((x, y) => d3.ascending(x['stateCode'], y['stateCode']))
     this.setState({
-      data: data2
+      data: data2,
+      sortedBy:'State',
+    })
+  }
+  changeShowNo = () => {
+    let showNo = 10, showText = 'Show All 543 Winners';
+    if(this.state.showNo === 10){
+      showNo=543
+      showText = 'Show Less'
+    }
+    this.setState({
+      showNo:showNo,
+      showText:showText,
     })
   }
   render() {
     let cards = this.state.data.map((d,i) => {
-      let color = colors["Party"]["Independent & Others"];
-      if(Object.keys(colors['Party']).indexOf(d[`2019-Result`]['1']['Party']) > -1){
-        color = colors['Party'][d[`2019-Result`]['1']['Party']]
+      if(i < this.state.showNo) {
+        let color = colors["Party"]["Independent & Others"];
+        if(Object.keys(colors['Party']).indexOf(d[`2019-Result`]['1']['Party']) > -1){
+          color = colors['Party'][d[`2019-Result`]['1']['Party']]
+        }
+        return (
+          <Cards
+            key={i} 
+            SrNo={i + 1}
+            Name={capitalize.words(d['2019-Result']['1']['Name'])}
+            Party={d['2019-Result']['1']['Party']}
+            Constituency={`${d['Name']}`}
+            State={d['stateFullName']}
+            CriminalCases= {!d['2019-Result']['1']['Criminal Cases'] ? 0 : d['2019-Result']['1']['Criminal Cases']}
+            Education={!d['2019-Result']['1']['Education'] ? 'NA' : d['2019-Result']['1']['Education']}
+            Assets={d['2019-Result']['1']['Assets'] === 0 ? 'NA' : `Rs. ${numDifferentiation(d['2019-Result']['1']['Assets'])}`}
+            Votes={`${numDifferentiation(d['2019-Result']['1']['Votes'])}`}
+            VoteShare = {d['2019-Result']['1']['VoteShare']}
+            Color = {color}
+            CriminalCaseWeight={!d['2019-Result']['1']['Criminal Cases'] ? '400' : '700'}
+            Link={d['2019-Result']['1']['ADR-Profile']}
+            PCType={d['2019-Result']['PC Type']}
+          />
+        )}
+        else return null;
       }
-      return (
-        <Cards
-          key={i} 
-          SrNo={i + 1}
-          Name={capitalize.words(d['2019-Result']['1']['Name'])}
-          Party={d['2019-Result']['1']['Party']}
-          Constituency={`${d['Name']}`}
-          State={d['stateFullName']}
-          CriminalCases= {!d['2019-Result']['1']['Criminal Cases'] ? 0 : d['2019-Result']['1']['Criminal Cases']}
-          Education={!d['2019-Result']['1']['Education'] ? 'NA' : d['2019-Result']['1']['Education']}
-          Assets={d['2019-Result']['1']['Assets'] === 0 ? 'NA' : `Rs. ${numDifferentiation(d['2019-Result']['1']['Assets'])}`}
-          Votes={`${numDifferentiation(d['2019-Result']['1']['Votes'])}`}
-          VoteShare = {d['2019-Result']['1']['VoteShare']}
-          Color = {color}
-          CriminalCaseWeight={!d['2019-Result']['1']['Criminal Cases'] ? '400' : '700'}
-          Link={d['2019-Result']['1']['ADR-Profile']}
-          PCType={d['2019-Result']['PC Type']}
-        />
-      )
-    })
+    )
     return (
       <div id='minister-list'>
         <div className='section-head'>List of Winners in Lok Sabha 2019 for All 543 Constituencies</div>
         <div className='section-byline'>This section lists all the winners and their background. Click on the header to sort the winners and click on the winner to know more.</div>
         <div className='table-body mp-table-head-bg' style={ {borderLeft: `5px solid rgba(255,255,255,0)` }}>
           <div className='table-no mp-table-head'>#</div>
-          <div className='table-name mp-table-head' onClick={this.sortByName}>Name</div>
-          <div className='mp-table-head table-party' onClick={this.sortParty}>Party</div>
-          <div className='mp-table-head table-constituency' onClick={this.sortConstituency}>Constituency</div>
-          <div className='mp-table-head table-state' onClick={this.sortState}>State</div>
-          <div className='mp-table-head table-education' onClick={this.sortByEducation}>Education</div>
-          <div className='mp-table-head table-criminal-cases' onClick={this.sortByCriminalCases}>Criminal Cases</div>
-          <div className='mp-table-head table-assets' onClick={this.sortByAssets}>Total Assets</div>
+          <div className={this.state.sortedBy === 'Name' ? 'table-name mp-table-head selected' : 'table-name mp-table-head'} onClick={this.sortByName}>{this.state.sortedBy === 'Name' ? 'Name ⏶' : 'Name'}</div>
+          <div className={this.state.sortedBy === 'Party' ? 'table-party mp-table-head selected' : 'table-party mp-table-head'} onClick={this.sortParty}>{this.state.sortedBy === 'Party' ? 'Party ⏶' : 'Party'}</div>
+          <div className={this.state.sortedBy === 'Constituency' ? 'table-constituency mp-table-head selected' : 'table-constituency mp-table-head'} onClick={this.sortConstituency}>{this.state.sortedBy === 'Constituency' ? 'Constituency ⏶' : 'Constituency'}</div>
+          <div className={this.state.sortedBy === 'State' ? 'table-state mp-table-head selected' : 'table-state mp-table-head'} onClick={this.sortState}>{this.state.sortedBy === 'State' ? 'State ⏶' : 'State'}</div>
+          <div className={this.state.sortedBy === 'Education' ? 'table-education mp-table-head selected' : 'table-education mp-table-head'} onClick={this.sortByEducation}>{this.state.sortedBy === 'Education' ? 'Education ⏶' : 'Education'}</div>
+          <div className={this.state.sortedBy === 'Criminal Cases' ? 'table-criminal-cases mp-table-head selected' : 'table-criminal-cases mp-table-head'} onClick={this.sortByCriminalCases}>{this.state.sortedBy === 'Criminal Cases' ? 'Criminal Cases ⏶' : 'Criminal Cases'}</div>
+          <div className={this.state.sortedBy === 'Assets' ? 'table-assets mp-table-head selected' : 'table-assets mp-table-head'} onClick={this.sortByAssets}>{this.state.sortedBy === 'Assets' ? 'Total Assets ⏶' : 'Total Assets'}</div>
         </div>
         {cards}
+        <div className='table-body-button' onClick={this.changeShowNo}>
+          {this.state.showText}
+        </div>
       </div>
     )
   }
