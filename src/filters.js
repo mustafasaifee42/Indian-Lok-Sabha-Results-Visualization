@@ -10,6 +10,11 @@ const dataNa = {
   '2014':'',
   '2019':'(Data not available for 2019)'
 }
+const phaseDisplay = {
+  '2009':'none',
+  '2014':'none',
+  '2019':'inline'
+}
 const dataNaADR = {
   '2009':'(Data not available for 2009)',
   '2014':'',
@@ -65,6 +70,16 @@ class Visualization extends Component {
         'Doctorate':false,
         'Others':false,
         'Not Available':false
+      },
+      filterPhase:{
+        'All':true,
+        '1':false,
+        '2':false,
+        '3':false,
+        '4':false,
+        '5':false,
+        '6':false,
+        '7':false
       },
       filterAssets:{
         'All':true,
@@ -236,6 +251,23 @@ class Visualization extends Component {
     })
     this.props.changeFilter(this.state)
   }
+  filterPhase = (event,data) => {
+    let temp = this.state.filterPhase;
+    temp[data.value] = data.checked
+    let keys  = Object.keys(temp)
+    let Alltemp = true;
+    keys.forEach(el => {
+      if (el !== 'All'){
+        if(temp[el])
+          Alltemp=false
+      }
+    })
+    temp['All'] = Alltemp;
+    this.setState({
+      filterPhase: temp
+    })
+    this.props.changeFilter(this.state)
+  }
   filterVoteShare = (event,data) => {
     let temp = this.state.filterVoteShare;
     temp[data.value] = data.checked
@@ -273,6 +305,20 @@ class Visualization extends Component {
               <Checkbox label='UPA' value='UPA' onChange={this.filterAlliances}/>
               <Checkbox label='Mahagatbandhan' value='Mahagatbandhan' onChange={this.filterAlliances}/>
               <Checkbox label='Others' value='Others' onChange={this.filterAlliances}/>
+            </div>
+          </div>
+          <div style={{'display':`${phaseDisplay[this.props.yearSelected]}`}}>
+            <div className="filters-unit filters-unit-two"  >
+              {`Filter By Election Phases (Only Applicable for 2019)`}
+              <div className="filters filterCheckBox">
+                <Checkbox label={`Phase 1`} value='1' onChange={this.filterPhase} />
+                <Checkbox label={`Phase 2`} value='2' onChange={this.filterPhase} />
+                <Checkbox label={`Phase 3`} value='3' onChange={this.filterPhase} />
+                <Checkbox label={`Phase 4`} value='4' onChange={this.filterPhase} />
+                <Checkbox label={`Phase 5`} value='5' onChange={this.filterPhase} />
+                <Checkbox label={`Phase 6`} value='6' onChange={this.filterPhase} />
+                <Checkbox label={`Phase 7`} value='7' onChange={this.filterPhase} />
+              </div>
             </div>
           </div>
           <div className="filters-unit filters-unit-two">

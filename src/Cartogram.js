@@ -101,6 +101,40 @@ class Cartogram extends Component {
             if (arrTemp.indexOf(1) === -1)
               op = 0.05
           }
+          if(!this.props.filterValue.filterPhase['All']){
+            let arrTemp = [0,0,0,0,0,0,0]
+            if(this.props.filterValue.filterPhase['1']){
+              if(d[`2019-Result`]['Election Phase'] === 1)
+                arrTemp[0] = 1
+            }
+            if(this.props.filterValue.filterPhase['2']){
+              if(d[`2019-Result`]['Election Phase'] === 2)
+                arrTemp[1] = 1
+            }
+            if(this.props.filterValue.filterPhase['3']){
+              if(d[`2019-Result`]['Election Phase'] === 3)
+                arrTemp[2] = 1
+            }
+            if(this.props.filterValue.filterPhase['4']){
+              if(d[`2019-Result`]['Election Phase'] === 4)
+                arrTemp[3] = 1
+            }
+            if(this.props.filterValue.filterPhase['5']){
+              if(d[`2019-Result`]['Election Phase'] === 5)
+                arrTemp[4] = 1
+            }
+            if(this.props.filterValue.filterPhase['6']){
+              if(d[`2019-Result`]['Election Phase'] === 6)
+                arrTemp[5] = 1
+            }
+            if(this.props.filterValue.filterPhase['7']){
+              if(d[`2019-Result`]['Election Phase'] === 7)
+                arrTemp[6] = 1
+            }
+            if(this.props.yearSelected === '2019')
+              if (arrTemp.indexOf(1) === -1)
+                op = 0.05
+          }
           if(!this.props.filterValue.filterReligion['All']){
             if(!this.props.filterValue.filterReligion['Muslim']){
               if(d[`${this.props.yearSelected}-Result`]['1']['Religion'] === 'Muslim')
