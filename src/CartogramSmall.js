@@ -118,7 +118,7 @@ class Cartogram extends Component {
           })
         break;
       case 'East India':
-        state = ['West Bengal','Odisha']
+        state = ['West Bengal','Odisha','Jharkhand','Bihar']
         seatNo = 0
         state.forEach(d => {
           seatNo = seatNo + stateSeatNoObj[d]
