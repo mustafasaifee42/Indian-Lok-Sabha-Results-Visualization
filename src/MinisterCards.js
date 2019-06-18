@@ -45,7 +45,7 @@ class Visualization extends Component {
     this.state = {
       data: data,
       showNo:10,
-      showText:'Show All 543 Winners',
+      showText:'Show All MPs in Lok Sabha',
       sortedBy:null,
     }
   }
@@ -128,7 +128,7 @@ class Visualization extends Component {
     let showNo = 10, showText = 'Show All 543 Winners';
     if(this.state.showNo === 10){
       showNo=543
-      showText = 'Show Less'
+      showText = 'Only Show Top 10'
     }
     this.setState({
       showNo:showNo,
